@@ -18,8 +18,8 @@
   
   <entry>
     <title>Flutter-Slidable</title>
-    <link href="https://blog.kahvia.cn/posts/64e4.html"/>
-    <id>https://blog.kahvia.cn/posts/64e4.html</id>
+    <link href="https://blog.kahvia.cn/2022/10/23/FlutterSlidable.html"/>
+    <id>https://blog.kahvia.cn/2022/10/23/FlutterSlidable.html</id>
     <published>2022-10-23T09:57:18.396Z</published>
     <updated>2022-10-24T11:37:12.628Z</updated>
     
@@ -43,8 +43,8 @@
   
   <entry>
     <title>Flutter-CircularProgressIndicator</title>
-    <link href="https://blog.kahvia.cn/posts/3443.html"/>
-    <id>https://blog.kahvia.cn/posts/3443.html</id>
+    <link href="https://blog.kahvia.cn/2022/10/20/FlutterCircularProgressIndicator.html"/>
+    <id>https://blog.kahvia.cn/2022/10/20/FlutterCircularProgressIndicator.html</id>
     <published>2022-10-20T08:29:31.068Z</published>
     <updated>2022-10-24T11:37:11.920Z</updated>
     
@@ -67,8 +67,8 @@
   
   <entry>
     <title>Flutter-ImagePicker-ImageCropper</title>
-    <link href="https://blog.kahvia.cn/posts/e2f5.html"/>
-    <id>https://blog.kahvia.cn/posts/e2f5.html</id>
+    <link href="https://blog.kahvia.cn/2022/10/20/FlutterImagePickerAndCropper.html"/>
+    <id>https://blog.kahvia.cn/2022/10/20/FlutterImagePickerAndCropper.html</id>
     <published>2022-10-20T05:49:22.508Z</published>
     <updated>2022-10-24T11:37:11.180Z</updated>
     
@@ -101,8 +101,8 @@
   
   <entry>
     <title>MicroService-Nacos</title>
-    <link href="https://blog.kahvia.cn/posts/1bda.html"/>
-    <id>https://blog.kahvia.cn/posts/1bda.html</id>
+    <link href="https://blog.kahvia.cn/2022/10/16/MicroserviceNacos.html"/>
+    <id>https://blog.kahvia.cn/2022/10/16/MicroserviceNacos.html</id>
     <published>2022-10-16T04:52:16.493Z</published>
     <updated>2022-10-24T11:37:09.201Z</updated>
     
@@ -127,8 +127,8 @@
   
   <entry>
     <title>Springboot项目打 jar 包没有webapp中的静态资源</title>
-    <link href="https://blog.kahvia.cn/posts/5ec3.html"/>
-    <id>https://blog.kahvia.cn/posts/5ec3.html</id>
+    <link href="https://blog.kahvia.cn/2022/10/07/SpringbootWithoutWebapp.html"/>
+    <id>https://blog.kahvia.cn/2022/10/07/SpringbootWithoutWebapp.html</id>
     <published>2022-10-07T03:21:50.351Z</published>
     <updated>2022-10-24T04:13:33.074Z</updated>
     
@@ -152,8 +152,8 @@
   
   <entry>
     <title>MicroService-Eureka</title>
-    <link href="https://blog.kahvia.cn/posts/3545.html"/>
-    <id>https://blog.kahvia.cn/posts/3545.html</id>
+    <link href="https://blog.kahvia.cn/2022/10/05/MicroserviceEureka.html"/>
+    <id>https://blog.kahvia.cn/2022/10/05/MicroserviceEureka.html</id>
     <published>2022-10-05T06:36:11.655Z</published>
     <updated>2022-10-24T04:13:33.066Z</updated>
     
@@ -181,8 +181,8 @@
   
   <entry>
     <title>Flutter-TextFormField</title>
-    <link href="https://blog.kahvia.cn/posts/5200.html"/>
-    <id>https://blog.kahvia.cn/posts/5200.html</id>
+    <link href="https://blog.kahvia.cn/2022/10/01/FlutterTextFormField.html"/>
+    <id>https://blog.kahvia.cn/2022/10/01/FlutterTextFormField.html</id>
     <published>2022-10-01T03:01:39.421Z</published>
     <updated>2022-10-24T04:13:33.053Z</updated>
     
@@ -206,8 +206,8 @@
   
   <entry>
     <title>Flutter-购物小测试</title>
-    <link href="https://blog.kahvia.cn/posts/aaba.html"/>
-    <id>https://blog.kahvia.cn/posts/aaba.html</id>
+    <link href="https://blog.kahvia.cn/2022/09/29/FlutterGoodsStoreDemo.html"/>
+    <id>https://blog.kahvia.cn/2022/09/29/FlutterGoodsStoreDemo.html</id>
     <published>2022-09-29T11:29:15.301Z</published>
     <updated>2022-10-24T04:13:33.029Z</updated>
     
@@ -231,8 +231,8 @@
   
   <entry>
     <title>Flutter-BottomNavigatorBar</title>
-    <link href="https://blog.kahvia.cn/posts/5e0e.html"/>
-    <id>https://blog.kahvia.cn/posts/5e0e.html</id>
+    <link href="https://blog.kahvia.cn/2022/09/29/FlutterBottomNavigatorBar.html"/>
+    <id>https://blog.kahvia.cn/2022/09/29/FlutterBottomNavigatorBar.html</id>
     <published>2022-09-29T04:51:39.100Z</published>
     <updated>2022-10-24T04:13:33.003Z</updated>
     
@@ -256,8 +256,8 @@
   
   <entry>
     <title>Flutter-Navigator</title>
-    <link href="https://blog.kahvia.cn/posts/9851.html"/>
-    <id>https://blog.kahvia.cn/posts/9851.html</id>
+    <link href="https://blog.kahvia.cn/2022/09/28/Navigator.html"/>
+    <id>https://blog.kahvia.cn/2022/09/28/Navigator.html</id>
     <published>2022-09-28T06:02:17.390Z</published>
     <updated>2022-10-24T04:13:33.071Z</updated>
     
@@ -282,8 +282,8 @@
   
   <entry>
     <title>Flutter-InheritedWidget</title>
-    <link href="https://blog.kahvia.cn/posts/70bb.html"/>
-    <id>https://blog.kahvia.cn/posts/70bb.html</id>
+    <link href="https://blog.kahvia.cn/2022/09/26/InheritedWidget.html"/>
+    <id>https://blog.kahvia.cn/2022/09/26/InheritedWidget.html</id>
     <published>2022-09-26T13:58:19.394Z</published>
     <updated>2022-10-24T04:13:33.063Z</updated>
     
@@ -308,8 +308,8 @@
   
   <entry>
     <title>Flutter-Provider</title>
-    <link href="https://blog.kahvia.cn/posts/2a46.html"/>
-    <id>https://blog.kahvia.cn/posts/2a46.html</id>
+    <link href="https://blog.kahvia.cn/2022/09/26/FlutterProvider.html"/>
+    <id>https://blog.kahvia.cn/2022/09/26/FlutterProvider.html</id>
     <published>2022-09-26T13:57:14.479Z</published>
     <updated>2022-10-24T04:13:33.041Z</updated>
     
@@ -333,8 +333,8 @@
   
   <entry>
     <title>Flutter-DataTable</title>
-    <link href="https://blog.kahvia.cn/posts/8ea8.html"/>
-    <id>https://blog.kahvia.cn/posts/8ea8.html</id>
+    <link href="https://blog.kahvia.cn/2022/09/24/DataTable.html"/>
+    <id>https://blog.kahvia.cn/2022/09/24/DataTable.html</id>
     <published>2022-09-24T07:21:42.784Z</published>
     <updated>2022-10-24T04:13:32.984Z</updated>
     
@@ -360,8 +360,8 @@
   
   <entry>
     <title>Flutter-ThirdPackage</title>
-    <link href="https://blog.kahvia.cn/posts/b48c.html"/>
-    <id>https://blog.kahvia.cn/posts/b48c.html</id>
+    <link href="https://blog.kahvia.cn/2022/09/18/ThirdPackage.html"/>
+    <id>https://blog.kahvia.cn/2022/09/18/ThirdPackage.html</id>
     <published>2022-09-18T05:43:42.646Z</published>
     <updated>2022-10-24T04:13:33.082Z</updated>
     
@@ -389,8 +389,8 @@
   
   <entry>
     <title>Flutter-列表</title>
-    <link href="https://blog.kahvia.cn/posts/7fa8.html"/>
-    <id>https://blog.kahvia.cn/posts/7fa8.html</id>
+    <link href="https://blog.kahvia.cn/2022/09/13/FlutterList.html"/>
+    <id>https://blog.kahvia.cn/2022/09/13/FlutterList.html</id>
     <published>2022-09-13T08:51:05.930Z</published>
     <updated>2022-10-24T04:13:33.038Z</updated>
     
@@ -420,8 +420,8 @@
   
   <entry>
     <title>Flutter-图片</title>
-    <link href="https://blog.kahvia.cn/posts/3f4a.html"/>
-    <id>https://blog.kahvia.cn/posts/3f4a.html</id>
+    <link href="https://blog.kahvia.cn/2022/09/13/FlutterPicture.html"/>
+    <id>https://blog.kahvia.cn/2022/09/13/FlutterPicture.html</id>
     <published>2022-09-13T08:35:26.028Z</published>
     <updated>2022-10-24T04:13:33.045Z</updated>
     
@@ -447,8 +447,8 @@
   
   <entry>
     <title>Flutter-Button</title>
-    <link href="https://blog.kahvia.cn/posts/24ff.html"/>
-    <id>https://blog.kahvia.cn/posts/24ff.html</id>
+    <link href="https://blog.kahvia.cn/2022/09/12/FlutterButton.html"/>
+    <id>https://blog.kahvia.cn/2022/09/12/FlutterButton.html</id>
     <published>2022-09-12T14:49:19.415Z</published>
     <updated>2022-10-24T04:13:33.010Z</updated>
     
@@ -481,8 +481,8 @@
   
   <entry>
     <title>Flutter交互实践</title>
-    <link href="https://blog.kahvia.cn/posts/5b9e.html"/>
-    <id>https://blog.kahvia.cn/posts/5b9e.html</id>
+    <link href="https://blog.kahvia.cn/2022/09/11/Flutter-test2.html"/>
+    <id>https://blog.kahvia.cn/2022/09/11/Flutter-test2.html</id>
     <published>2022-09-11T12:17:07.916Z</published>
     <updated>2022-10-24T04:13:33.007Z</updated>
     
@@ -502,8 +502,8 @@
   
   <entry>
     <title>Flutter布局实践</title>
-    <link href="https://blog.kahvia.cn/posts/b2a6.html"/>
-    <id>https://blog.kahvia.cn/posts/b2a6.html</id>
+    <link href="https://blog.kahvia.cn/2022/09/11/Flutter-test1.html"/>
+    <id>https://blog.kahvia.cn/2022/09/11/Flutter-test1.html</id>
     <published>2022-09-11T08:56:36.347Z</published>
     <updated>2022-10-24T04:13:32.999Z</updated>
     
@@ -523,8 +523,8 @@
   
   <entry>
     <title>自动连接校园网（三峡大学）</title>
-    <link href="https://blog.kahvia.cn/posts/14b4.html"/>
-    <id>https://blog.kahvia.cn/posts/14b4.html</id>
+    <link href="https://blog.kahvia.cn/2022/09/09/AutoConnectCTGUweb.html"/>
+    <id>https://blog.kahvia.cn/2022/09/09/AutoConnectCTGUweb.html</id>
     <published>2022-09-09T13:01:53.974Z</published>
     <updated>2022-10-24T04:13:32.974Z</updated>
     
