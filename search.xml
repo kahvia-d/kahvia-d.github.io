@@ -1008,11 +1008,33 @@
     
     
     <entry>
+      <title>分类</title>
+      <link href="/category/index.html"/>
+      <url>/category/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>about</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
       
         <content type="html"><![CDATA[<h1 id="Hello-It’s-Kahvia"><a href="#Hello-It’s-Kahvia" class="headerlink" title="Hello, It’s Kahvia ."></a>Hello, It’s <a href="#">Kahvia</a> .</h1><hr><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>是雪枫糖呀，也是Kahvia呀。</p><blockquote><p><strong>天不生我雪枫糖，三大万古如长夜。</strong></p></blockquote><h3 id="能力"><a href="#能力" class="headerlink" title="能力"></a>能力</h3><ol><li>Java</li><li>Spring Mvc &#x2F; Spring boot</li><li>Vue2</li></ol><h3 id="待学习"><a href="#待学习" class="headerlink" title="待学习"></a>待学习</h3><ul><li><input disabled="" type="checkbox"> Dart</li><li><input disabled="" type="checkbox"> Flutter</li><li><input disabled="" type="checkbox"> Redis</li><li><input disabled="" type="checkbox"> Spring Cloud</li><li><input disabled="" type="checkbox"> React</li></ul>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>留言板</title>
+      <link href="/comment/index.html"/>
+      <url>/comment/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -1030,17 +1052,6 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/category/index.html"/>
-      <url>/category/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>赞赏</title>
       <link href="/donate/index.html"/>
       <url>/donate/index.html</url>
@@ -1052,9 +1063,9 @@
     
     
     <entry>
-      <title>留言板</title>
-      <link href="/comment/index.html"/>
-      <url>/comment/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1077,17 +1088,6 @@
       <title>links</title>
       <link href="/links/index.html"/>
       <url>/links/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
