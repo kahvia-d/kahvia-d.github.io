@@ -997,6 +997,28 @@
     
     
     <entry>
+      <title>分类</title>
+      <link href="/category/index.html"/>
+      <url>/category/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>留言板</title>
+      <link href="/comment/index.html"/>
+      <url>/comment/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -1019,44 +1041,11 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/category/index.html"/>
-      <url>/category/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>赞赏</title>
-      <link href="/donate/index.html"/>
-      <url>/donate/index.html</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>如果喜欢我的博客，或者喜欢我的博客主题，可以考虑赞赏一下哦，非常感激！<br>网站所需的服务器和 CDN 都是不小的开支，日常维护也需要大量精力。 <br>你们的支持是我前进的最大动力！</p></blockquote>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>友情链接</title>
       <link href="/friend/index.html"/>
       <url>/friend/index.html</url>
       
         <content type="html"><![CDATA[<blockquote><p>欢迎交换友链</p></blockquote>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>留言板</title>
-      <link href="/comment/index.html"/>
-      <url>/comment/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -1085,11 +1074,11 @@
     
     
     <entry>
-      <title>links</title>
-      <link href="/links/index.html"/>
-      <url>/links/index.html</url>
+      <title>赞赏</title>
+      <link href="/donate/index.html"/>
+      <url>/donate/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<blockquote><p>如果喜欢我的博客，或者喜欢我的博客主题，可以考虑赞赏一下哦，非常感激！<br>网站所需的服务器和 CDN 都是不小的开支，日常维护也需要大量精力。 <br>你们的支持是我前进的最大动力！</p></blockquote>]]></content>
       
     </entry>
     
@@ -1099,6 +1088,17 @@
       <title>tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>links</title>
+      <link href="/links/index.html"/>
+      <url>/links/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
