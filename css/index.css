@@ -2198,7 +2198,7 @@ figure.highlight pre .javascript .function {
   -webkit-transform: translateZ(0);
   height: 100px;
   padding: 10px;
-  width: calc(100% / 5 - 0.5rem);
+  width: calc(20% / 5 - 0.5rem);
   margin: 0.5rem 0.25rem;
   border-radius: 12px;
   border: var(--style-border);
