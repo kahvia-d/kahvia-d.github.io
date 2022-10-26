@@ -503,6 +503,13 @@
   </url>
   
   <url>
+    <loc>https://blog.kahvia.cn/tags/Dart/</loc>
+    <lastmod>2022-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.kahvia.cn/tags/Unix/</loc>
     <lastmod>2022-10-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -517,21 +524,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/Dart/</loc>
-    <lastmod>2022-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.kahvia.cn/tags/animejs/</loc>
-    <lastmod>2022-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.kahvia.cn/tags/gitalk/</loc>
     <lastmod>2022-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -546,6 +539,13 @@
   
   <url>
     <loc>https://blog.kahvia.cn/tags/test/</loc>
+    <lastmod>2022-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kahvia.cn/tags/gitalk/</loc>
     <lastmod>2022-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
