@@ -1,3 +1,4 @@
+https://blog.kahvia.cn/2022/10/27/FlutterSmoothPageIndicator.html
 https://blog.kahvia.cn/2022/10/26/FlutterPercentIndicator.html
 https://blog.kahvia.cn/2022/10/23/FlutterSlidable.html
 https://blog.kahvia.cn/2022/10/20/FlutterCircularProgressIndicator.html
@@ -7,4 +8,3 @@ https://blog.kahvia.cn/2022/10/07/SpringbootWithoutWebapp.html
 https://blog.kahvia.cn/2022/10/05/MicroserviceEureka.html
 https://blog.kahvia.cn/2022/10/01/FlutterTextFormField.html
 https://blog.kahvia.cn/2022/09/29/FlutterGoodsStoreDemo.html
-https://blog.kahvia.cn/2022/09/29/FlutterBottomNavigatorBar.html
