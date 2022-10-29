@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Flutter-ListWheelScrollView</title>
+      <link href="/2022/10/29/FlutterListWheelScrollView.html"/>
+      <url>/2022/10/29/FlutterListWheelScrollView.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="ListWheelScrollView"><a href="#ListWheelScrollView" class="headerlink" title="ListWheelScrollView"></a>ListWheelScrollView</h3><p>和 ListView 类似，但是正如它的名字，它像个轮子，显示的时候有弧度。</p><p>这是官方的组件，并不需要引入第三方依赖包。</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>它就像一个横放的圆柱，你只能看到前面这个面。能看到多少东西，取决于它的大小和你离它的位置。</p><p>可以使用 diameterRatio 改变它的圆面直径。你站在一个地方看圆柱，圆柱越大，你看那个面越不像弧面，能看到的东西就越多。就好像本来弯曲的书本，你让它不那么弯曲后，看到的就更多了吧。</p><p>可以使用 perspective 来决定你的透视位置。你离它越远，看到的东西越多。就像一张弯曲的纸上写着很多字，你贴近了看，只能看到几个字，拿远了看，就看得见一些弯曲后的字，总体上来说能看清的字变多了。</p><p>前者是在视野不变的情况下，让圆柱可视面能显示更多的东西。后者是让圆柱面显示的东西不变的情况下，自己去获得更大的视野，企图去看到更多东西。</p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Checker</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> Checker(&#123;Key? key&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="comment">//层叠布局，用一个阴影来标注当前选项</span></span><br><span class="line">    <span class="keyword">return</span> Stack(</span><br><span class="line">      children: [</span><br><span class="line">        Center(</span><br><span class="line">          child: Row(</span><br><span class="line">            mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">            children: [</span><br><span class="line">              SizedBox(</span><br><span class="line">                width: <span class="number">100</span>,</span><br><span class="line">                child:ListWheelScrollView.useDelegate(</span><br><span class="line">                  <span class="comment">//固定距离滚动，这样可以刚好停留在一个选项上</span></span><br><span class="line">                    physics: <span class="keyword">const</span> FixedExtentScrollPhysics(),</span><br><span class="line">                    <span class="comment">//透视程度。0代表从无限远的地方观察圆柱，而1代表从无限近的地方观察，近到无法渲染</span></span><br><span class="line">                    <span class="comment">//可选择的范围是(0,0.01]，隔得越远，弧线角度变化越不明显，看到的范围也就越大</span></span><br><span class="line">                    perspective: <span class="number">0.005</span>,</span><br><span class="line">                    <span class="comment">//直径比，默认为2。可以代表这个圆柱截面圆的直径。</span></span><br><span class="line">                    <span class="comment">//在某个固定的地方观察圆柱，圆柱截面直径越大，角度变化越不明显。列表看起来越像直线，看的范围反而好像变大了。</span></span><br><span class="line">                    diameterRatio: <span class="number">1.2</span>,</span><br><span class="line">                    <span class="comment">//每个选项的高度</span></span><br><span class="line">                    itemExtent: <span class="number">50</span>,</span><br><span class="line">                    <span class="comment">//子选项构造器</span></span><br><span class="line">                    childDelegate: ListWheelChildBuilderDelegate(</span><br><span class="line">                        childCount: <span class="number">13</span>,</span><br><span class="line">                        builder: (context,index)=&gt;Hour(hour: index,)</span><br><span class="line">                    )</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">              SizedBox(</span><br><span class="line">                width: <span class="number">100</span>,</span><br><span class="line">                child: ListWheelScrollView.useDelegate(</span><br><span class="line">                    physics: <span class="keyword">const</span> FixedExtentScrollPhysics(),</span><br><span class="line">                    perspective: <span class="number">0.005</span>,</span><br><span class="line">                    diameterRatio: <span class="number">1.2</span>,</span><br><span class="line">                    itemExtent: <span class="number">50</span>,</span><br><span class="line">                    childDelegate: ListWheelChildBuilderDelegate(</span><br><span class="line">                        childCount: <span class="number">60</span>,</span><br><span class="line">                        builder: (context,index)=&gt;Minute(minute: index)</span><br><span class="line">                    )</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">              SizedBox(</span><br><span class="line">                width: <span class="number">100</span>,</span><br><span class="line">                child: ListWheelScrollView.useDelegate(</span><br><span class="line">                    physics: <span class="keyword">const</span> FixedExtentScrollPhysics(),</span><br><span class="line">                    perspective: <span class="number">0.005</span>,</span><br><span class="line">                    diameterRatio: <span class="number">1.2</span>,</span><br><span class="line">                    itemExtent: <span class="number">50</span>,</span><br><span class="line">                    childDelegate: ListWheelChildBuilderDelegate(</span><br><span class="line">                        childCount: <span class="number">2</span>,</span><br><span class="line">                        builder: (context,index)&#123;</span><br><span class="line">                          <span class="keyword">return</span> AmPm(am: index==<span class="number">0</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                    )</span><br><span class="line">                ),</span><br><span class="line">              )</span><br><span class="line">            ],</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">        Center(</span><br><span class="line">          child: Container(</span><br><span class="line">            decoration: BoxDecoration(</span><br><span class="line">              color: <span class="keyword">const</span> Color.fromRGBO(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.3</span>),</span><br><span class="line">              borderRadius: BorderRadius.circular(<span class="number">24</span>)</span><br><span class="line">            ),</span><br><span class="line">            height: <span class="number">50</span>,</span><br><span class="line">          ),</span><br><span class="line">        )</span><br><span class="line">      ],</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="https://pics.kahvia.cn/img/image-20221029143240083.png" alt="image-20221029143240083"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Flutter-SmoothPageIndicator-Lottie</title>
       <link href="/2022/10/27/FlutterSmoothPageIndicator.html"/>
       <url>/2022/10/27/FlutterSmoothPageIndicator.html</url>
@@ -1069,28 +1094,6 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/flash.css"/>
-      <url>/css/flash.css</url>
-      
-        <content type="html"><![CDATA[.pace {-webkit-pointer-events: none;pointer-events: none;-webkit-user-select: none;-moz-user-select: none;user-select: none;}.pace-inactive {display: none;}.pace .pace-progress {background: #29d;position: fixed;z-index: 2000;top: 0;right: 100%;width: 100%;height: 2px;}.pace .pace-progress-inner {display: block;position: absolute;right: 0px;width: 100px;height: 100%;box-shadow: 0 0 10px #29d, 0 0 5px #29d;opacity: 1.0;-webkit-transform: rotate(3deg) translate(0px, -4px);-moz-transform: rotate(3deg) translate(0px, -4px);-ms-transform: rotate(3deg) translate(0px, -4px);-o-transform: rotate(3deg) translate(0px, -4px);transform: rotate(3deg) translate(0px, -4px);}.pace .pace-activity {display: block;position: fixed;z-index: 2000;top: 15px;right: 15px;width: 14px;height: 14px;border: solid 2px transparent;border-top-color: #29d;border-left-color: #29d;border-radius: 10px;-webkit-animation: pace-spinner 400ms linear infinite;-moz-animation: pace-spinner 400ms linear infinite;-ms-animation: pace-spinner 400ms linear infinite;-o-animation: pace-spinner 400ms linear infinite;animation: pace-spinner 400ms linear infinite;}@-webkit-keyframes pace-spinner {0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}@-moz-keyframes pace-spinner {0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }}@-o-keyframes pace-spinner {0% { -o-transform: rotate(0deg); transform: rotate(0deg); }100% { -o-transform: rotate(360deg); transform: rotate(360deg); }}@-ms-keyframes pace-spinner {0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }}@keyframes pace-spinner {0% { transform: rotate(0deg); transform: rotate(0deg); }100% { transform: rotate(360deg); transform: rotate(360deg); }}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>分类</title>
-      <link href="/category/index.html"/>
-      <url>/category/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>留言板</title>
       <link href="/comment/index.html"/>
       <url>/comment/index.html</url>
@@ -1107,6 +1110,28 @@
       <url>/css/custom.css</url>
       
         <content type="html"><![CDATA[/* @font-face {  font-family: Candyhome;  src: url(https://npm.elemecdn.com/anzhiyu-blog@1.1.6/fonts/Candyhome.ttf);  font-display: swap;  font-weight: lighter;} */@font-face {    font-family: ZhuZiAYuanJWD;    src: url(https://npm.elemecdn.com/anzhiyu-blog@1.1.6/fonts/ZhuZiAWan.woff2);    font-display: swap;    font-weight: lighter;}div#menus {    font-family: "ZhuZiAYuanJWD";}h1#site-title {    font-family: ZhuZiAYuanJWD;    font-size: 3em !important;}a.article-title,a.blog-slider__title,a.categoryBar-list-link,h1.post-title {    font-family: ZhuZiAYuanJWD;}.iconfont {    font-family: "iconfont" !important;    font-size: 3em;    /* 可以定义图标大小 */    font-style: normal;    -webkit-font-smoothing: antialiased;    -moz-osx-font-smoothing: grayscale;}/* 时间轴生肖icon */svg.icon {    /* 这里定义svg.icon，避免和Butterfly自带的note标签冲突 */    width: 1em;    height: 1em;    /* width和height定义图标的默认宽度和高度*/    vertical-align: -0.15em;    fill: currentColor;    overflow: hidden;}.icon-zhongbiao::before {    color: #f7c768;}/* bilibli番剧插件 */#article-container .bangumi-tab.bangumi-active {    background: var(--anzhiyu-theme);    color: var(--anzhiyu-ahoverbg);    border-radius: 10px;}a.bangumi-tab:hover {    text-decoration: none !important;}.bangumi-button:hover {    background: var(--anzhiyu-theme) !important;    border-radius: 10px !important;    color: var(--anzhiyu-ahoverbg) !important;}a.bangumi-button.bangumi-nextpage:hover {    text-decoration: none !important;}.bangumi-button {    padding: 5px 10px !important;}a.bangumi-tab {    padding: 5px 10px !important;}svg.icon.faa-tada {    font-size: 1.1em;}.bangumi-info-item {    border-right: 1px solid #f2b94b;}.bangumi-info-item span {    color: #f2b94b;}.bangumi-info-item em {    color: #f2b94b;}/* 解决artitalk的图标问题 */#uploadSource>svg {    width: 1.19em;    height: 1.5em;}/*top-img黑色透明玻璃效果移除，不建议加，除非你执着于完全一图流或者背景图对比色明显 */#page-header:not(.not-top-img):before {    background-color: transparent !important;}/* 首页文章卡片 */#recent-posts>.recent-post-item {    background: rgba(255, 255, 255, 0.9);}/* 首页侧栏卡片 */#aside-content .card-widget {    background: rgba(255, 255, 255, 0.9);}/* 文章页面正文背景 */div#post {    background: rgba(255, 255, 255, 0.9);}/* 分页页面 */div#page {    background: rgba(255, 255, 255, 0.9);}/* 归档页面 */div#archive {    background: rgba(255, 255, 255, 0.9);}/* 标签页面 */div#tag {    background: rgba(255, 255, 255, 0.9);}/* 分类页面 */div#category {    background: rgba(255, 255, 255, 0.9);}/*夜间模式伪类遮罩层透明*/[data-theme="dark"] #recent-posts>.recent-post-item {    background: #121212;}[data-theme="dark"] .card-widget {    background: #121212 !important;}[data-theme="dark"] div#post {    background: #121212 !important;}[data-theme="dark"] div#tag {    background: #121212 !important;}[data-theme="dark"] div#archive {    background: #121212 !important;}[data-theme="dark"] div#page {    background: #121212 !important;}[data-theme="dark"] div#category {    background: #121212 !important;}[data-theme="dark"] div#category {    background: transparent !important;}/* 页脚透明 */#footer {    background: transparent !important;}/* 头图透明 */#page-header {    background: transparent !important;}#rightside>div>button {    border-radius: 5px;}/* 滚动条 */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #425aef;    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}::-moz-selection {    color: #fff;    background-color: #425aef;}/* 音乐播放器 *//* .aplayer .aplayer-lrc {    display: none !important;  } */.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {    left: -66px !important;    transition: all 0.3s;    /* 默认情况下缩进左侧66px，只留一点箭头部分 */}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {    left: 0 !important;    transition: all 0.3s;    /* 鼠标悬停是左侧缩进归零，完全显示按钮 */}.aplayer.aplayer-fixed {    z-index: 999999 !important;}/* 评论框  */.vwrap {    box-shadow: 2px 2px 5px #bbb;    background: rgba(255, 255, 255, 0.3);    border-radius: 8px;    padding: 30px;    margin: 30px 0px 30px 0px;}/* 设置评论框 */.vcard {    box-shadow: 2px 2px 5px #bbb;    background: rgba(255, 255, 255, 0.3);    border-radius: 8px;    padding: 30px;    margin: 30px 0px 0px 0px;}/* 鼠标图标 */body {    cursor: url("/img/x1.cur"), auto;}a,[type="button"]:not(:disabled),[type="reset"]:not(:disabled),[type="submit"]:not(:disabled),button:not(:disabled) {    cursor: url("/img/x2.cur"), auto !important;}/* md网站下划线 */#article-container a:hover {    text-decoration: none !important;}#article-container #hpp_talk p img {    display: inline;}/* 404页面 */#error-wrap {    position: absolute;    top: 40%;    right: 0;    left: 0;    margin: 0 auto;    padding: 0 1rem;    max-width: 1000px;    transform: translate(0, -50%);}#error-wrap .error-content {    display: flex;    flex-direction: row;    justify-content: center;    align-items: center;    margin: 0 1rem;    height: 18rem;    border-radius: 8px;    background: var(--card-bg);    box-shadow: var(--card-box-shadow);    transition: all 0.3s;}#error-wrap .error-content .error-img {    box-flex: 1;    flex: 1;    height: 100%;    border-top-left-radius: 8px;    border-bottom-left-radius: 8px;    background-color: #425aef;    background-position: center;    background-size: cover;}#error-wrap .error-content .error-info {    box-flex: 1;    flex: 1;    padding: 0.5rem;    text-align: center;    font-size: 14px;    font-family: Titillium Web, "PingFang SC", "Hiragino Sans GB", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;}#error-wrap .error-content .error-info .error_title {    margin-top: -4rem;    font-size: 9em;}#error-wrap .error-content .error-info .error_subtitle {    margin-top: -3.5rem;    word-break: break-word;    font-size: 1.6em;}#error-wrap .error-content .error-info a {    display: inline-block;    margin-top: 0.5rem;    padding: 0.3rem 1.5rem;    background: var(--btn-bg);    color: var(--btn-color);}#body-wrap.error .aside-list {    display: flex;    flex-direction: row;    flex-wrap: nowrap;    bottom: 0px;    position: absolute;    padding: 1rem;    width: 100%;    overflow: scroll;}#body-wrap.error .aside-list .aside-list-group {    display: flex;    flex-direction: row;    flex-wrap: nowrap;    max-width: 1200px;    margin: 0 auto;}#body-wrap.error .aside-list .aside-list-item {    padding: 0.5rem;}#body-wrap.error .aside-list .aside-list-item img {    width: 100%;    object-fit: cover;    border-radius: 12px;}#body-wrap.error .aside-list .aside-list-item .thumbnail {    overflow: hidden;    width: 230px;    height: 143px;    background: var(--anzhiyu-card-bg);    display: flex;}#body-wrap.error .aside-list .aside-list-item .content .title {    -webkit-line-clamp: 2;    overflow: hidden;    display: -webkit-box;    -webkit-box-orient: vertical;    line-height: 1.5;    justify-content: center;    align-items: flex-end;    align-content: center;    padding-top: 0.5rem;    color: white;}#body-wrap.error .aside-list .aside-list-item .content time {    display: none;}/* 代码框主题 */#article-container figure.highlight {    border-radius: 10px;}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/flash.css"/>
+      <url>/css/flash.css</url>
+      
+        <content type="html"><![CDATA[.pace {-webkit-pointer-events: none;pointer-events: none;-webkit-user-select: none;-moz-user-select: none;user-select: none;}.pace-inactive {display: none;}.pace .pace-progress {background: #29d;position: fixed;z-index: 2000;top: 0;right: 100%;width: 100%;height: 2px;}.pace .pace-progress-inner {display: block;position: absolute;right: 0px;width: 100px;height: 100%;box-shadow: 0 0 10px #29d, 0 0 5px #29d;opacity: 1.0;-webkit-transform: rotate(3deg) translate(0px, -4px);-moz-transform: rotate(3deg) translate(0px, -4px);-ms-transform: rotate(3deg) translate(0px, -4px);-o-transform: rotate(3deg) translate(0px, -4px);transform: rotate(3deg) translate(0px, -4px);}.pace .pace-activity {display: block;position: fixed;z-index: 2000;top: 15px;right: 15px;width: 14px;height: 14px;border: solid 2px transparent;border-top-color: #29d;border-left-color: #29d;border-radius: 10px;-webkit-animation: pace-spinner 400ms linear infinite;-moz-animation: pace-spinner 400ms linear infinite;-ms-animation: pace-spinner 400ms linear infinite;-o-animation: pace-spinner 400ms linear infinite;animation: pace-spinner 400ms linear infinite;}@-webkit-keyframes pace-spinner {0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}@-moz-keyframes pace-spinner {0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }}@-o-keyframes pace-spinner {0% { -o-transform: rotate(0deg); transform: rotate(0deg); }100% { -o-transform: rotate(360deg); transform: rotate(360deg); }}@-ms-keyframes pace-spinner {0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }}@keyframes pace-spinner {0% { transform: rotate(0deg); transform: rotate(0deg); }100% { transform: rotate(360deg); transform: rotate(360deg); }}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>分类</title>
+      <link href="/category/index.html"/>
+      <url>/category/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -1135,9 +1160,9 @@
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>标签</title>
+      <link href="/tag/index.html"/>
+      <url>/tag/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1146,9 +1171,9 @@
     
     
     <entry>
-      <title>标签</title>
-      <link href="/tag/index.html"/>
-      <url>/tag/index.html</url>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
