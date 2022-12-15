@@ -6,7 +6,7 @@
   <link href="https://blog.kahvia.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.kahvia.cn/"/>
-  <updated>2022-12-15T06:10:41.637Z</updated>
+  <updated>2022-12-15T06:15:08.087Z</updated>
   <id>https://blog.kahvia.cn/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://blog.kahvia.cn/2022/12/15/HttpMixContent.html"/>
     <id>https://blog.kahvia.cn/2022/12/15/HttpMixContent.html</id>
     <published>2022-12-15T05:41:40.429Z</published>
-    <updated>2022-12-15T06:10:41.637Z</updated>
+    <updated>2022-12-15T06:15:08.087Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="问题发生场景"><a href="#问题发生场景" class="headerlink" title="问题发生场景"></a>问题发生场景</h3><p>在本地测试前后端项目的时候一切正常。当我将前端项目和后端项目打包并部署到服务器后，前端项目无法正常访问后端接口。浏览器控制台报错为“已阻止混合内容”，即mix content。</p><p>经过百度得知，mix content 常在 https 页面访问 http 接口时发生。</p><p>由于我的服务器上的tomcat之前就已经配置过SSL证书，所以部署在那个 tomcat 中的项目资源都会以https的方式访问。但是我这个后端项目是spring boot项目，使用的是内置的tomcat，所以直接部署后启动的是 http 服务。我 https 的页面访问了我 http 的接口，就产生了错误。</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ol><li>去除服务器上 tomcat 的SSL配置。（不合适）</li><li>为后端spring boot项目配置SSL证书。（目前适用于我）</li></ol><h3 id="方案实施"><a href="#方案实施" class="headerlink" title="方案实施"></a>方案实施</h3><ol><li><p>下载自己的SSL证书，将 jks 后缀的文件放在项目的 resource 目录下。</p></li><li><p>完善项目的配置文件，我这里用的是 yml 配置文件。</p></li><li><pre><code class="yaml">server:  port: xxxxx  ssl:    key-store: classpath:www.kahvia.cn.jks    key-store-type: JKS #证书文件类型    key-store-password: xxxxxxxx #证书下载时包含的密码</code></pre></li></ol><h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><ul><li>Mix Content 的错误不会在 http 页面请求 https 接口的时候发生。也就是说，当我为spring boot配置SSL证书后，本地项目仍然可以正常访问已经部署的后端项目。</li></ul>]]></content>
+    <content type="html"><![CDATA[<h3 id="问题发生场景"><a href="#问题发生场景" class="headerlink" title="问题发生场景"></a>问题发生场景</h3><p>在本地测试前后端项目的时候一切正常。当我将前端项目和后端项目打包并部署到服务器后，前端项目无法正常访问后端接口。浏览器控制台报错为“已阻止混合内容”，即mix content。</p><p>经过百度得知，mix content 常在 https 页面访问 http 接口时发生。</p><p>由于我的服务器上的tomcat之前就已经配置过SSL证书，所以部署在那个 tomcat 中的项目资源都会以https的方式访问。但是我这个后端项目是spring boot项目，使用的是内置的tomcat，所以直接部署后启动的是 http 服务。我 https 的页面访问了我 http 的接口，就产生了错误。</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ol><li>去除服务器上 tomcat 的SSL配置。（不合适）</li><li>为后端spring boot项目配置SSL证书。（目前适用于我）</li></ol><h3 id="方案实施"><a href="#方案实施" class="headerlink" title="方案实施"></a>方案实施</h3><ol><li>下载自己的SSL证书，将 jks 后缀的文件放在项目的 resource 目录下。</li><li>完善项目的配置文件，我这里用的是 yml 配置文件。</li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="string">xxxxx</span></span><br><span class="line">  <span class="attr">ssl:</span></span><br><span class="line">    <span class="attr">key-store:</span> <span class="string">classpath:www.kahvia.cn.jks</span></span><br><span class="line">    <span class="attr">key-store-type:</span> <span class="string">JKS</span> <span class="comment">#证书文件类型</span></span><br><span class="line">    <span class="attr">key-store-password:</span> <span class="string">xxxxxxxx</span> <span class="comment">#证书下载时包含的密码</span></span><br></pre></td></tr></table></figure><h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><ul><li>Mix Content 的错误不会在 http 页面请求 https 接口的时候发生。也就是说，当我为spring boot配置SSL证书后，本地项目仍然可以正常访问已经部署的后端项目。</li></ul>]]></content>
     
     
       
