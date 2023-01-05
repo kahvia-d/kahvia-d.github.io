@@ -609,14 +609,14 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/Springboot/</loc>
+    <loc>https://blog.kahvia.cn/tags/OS/</loc>
     <lastmod>2023-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/hexo/</loc>
+    <loc>https://blog.kahvia.cn/tags/Springboot/</loc>
     <lastmod>2023-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -637,7 +637,14 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/OS/</loc>
+    <loc>https://blog.kahvia.cn/tags/animejs/</loc>
+    <lastmod>2023-01-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kahvia.cn/tags/hexo/</loc>
     <lastmod>2023-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -658,13 +665,6 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/svg/</loc>
-    <lastmod>2023-01-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.kahvia.cn/tags/test/</loc>
     <lastmod>2023-01-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -672,7 +672,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/animejs/</loc>
+    <loc>https://blog.kahvia.cn/tags/svg/</loc>
     <lastmod>2023-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
