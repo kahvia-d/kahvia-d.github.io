@@ -583,14 +583,14 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/Flutter/</loc>
+    <loc>https://blog.kahvia.cn/tags/xxx/</loc>
     <lastmod>2023-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/xxx/</loc>
+    <loc>https://blog.kahvia.cn/tags/Flutter/</loc>
     <lastmod>2023-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -604,13 +604,6 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/MicroService/</loc>
-    <lastmod>2023-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.kahvia.cn/tags/Mysql/</loc>
     <lastmod>2023-03-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -618,7 +611,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/Springboot/</loc>
+    <loc>https://blog.kahvia.cn/tags/MicroService/</loc>
     <lastmod>2023-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -639,7 +632,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/animejs/</loc>
+    <loc>https://blog.kahvia.cn/tags/Springboot/</loc>
     <lastmod>2023-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -661,6 +654,13 @@
   
   <url>
     <loc>https://blog.kahvia.cn/tags/Dart/</loc>
+    <lastmod>2023-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kahvia.cn/tags/animejs/</loc>
     <lastmod>2023-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
