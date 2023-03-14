@@ -1322,9 +1322,20 @@
     
     
     <entry>
-      <title>留言板</title>
-      <link href="/comment/index.html"/>
-      <url>/comment/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>分类</title>
+      <link href="/category/index.html"/>
+      <url>/category/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1344,11 +1355,11 @@
     
     
     <entry>
-      <title>赞赏</title>
-      <link href="/donate/index.html"/>
-      <url>/donate/index.html</url>
+      <title>留言板</title>
+      <link href="/comment/index.html"/>
+      <url>/comment/index.html</url>
       
-        <content type="html"><![CDATA[<blockquote><p>如果喜欢我的博客，或者喜欢我的博客主题，可以考虑赞赏一下哦，非常感激！<br>网站所需的服务器和 CDN 都是不小的开支，日常维护也需要大量精力。 <br>你们的支持是我前进的最大动力！</p></blockquote>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -1366,33 +1377,11 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/category/index.html"/>
-      <url>/category/index.html</url>
+      <title>赞赏</title>
+      <link href="/donate/index.html"/>
+      <url>/donate/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>友情链接</title>
-      <link href="/friend/index.html"/>
-      <url>/friend/index.html</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>欢迎交换友链</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>如果喜欢我的博客，或者喜欢我的博客主题，可以考虑赞赏一下哦，非常感激！<br>网站所需的服务器和 CDN 都是不小的开支，日常维护也需要大量精力。 <br>你们的支持是我前进的最大动力！</p></blockquote>]]></content>
       
     </entry>
     
@@ -1410,9 +1399,31 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title></title>
+      <link href="/css/flash.css"/>
+      <url>/css/flash.css</url>
+      
+        <content type="html"><![CDATA[.pace {-webkit-pointer-events: none;pointer-events: none;-webkit-user-select: none;-moz-user-select: none;user-select: none;}.pace-inactive {display: none;}.pace .pace-progress {background: #29d;position: fixed;z-index: 2000;top: 0;right: 100%;width: 100%;height: 2px;}.pace .pace-progress-inner {display: block;position: absolute;right: 0px;width: 100px;height: 100%;box-shadow: 0 0 10px #29d, 0 0 5px #29d;opacity: 1.0;-webkit-transform: rotate(3deg) translate(0px, -4px);-moz-transform: rotate(3deg) translate(0px, -4px);-ms-transform: rotate(3deg) translate(0px, -4px);-o-transform: rotate(3deg) translate(0px, -4px);transform: rotate(3deg) translate(0px, -4px);}.pace .pace-activity {display: block;position: fixed;z-index: 2000;top: 15px;right: 15px;width: 14px;height: 14px;border: solid 2px transparent;border-top-color: #29d;border-left-color: #29d;border-radius: 10px;-webkit-animation: pace-spinner 400ms linear infinite;-moz-animation: pace-spinner 400ms linear infinite;-ms-animation: pace-spinner 400ms linear infinite;-o-animation: pace-spinner 400ms linear infinite;animation: pace-spinner 400ms linear infinite;}@-webkit-keyframes pace-spinner {0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}@-moz-keyframes pace-spinner {0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }}@-o-keyframes pace-spinner {0% { -o-transform: rotate(0deg); transform: rotate(0deg); }100% { -o-transform: rotate(360deg); transform: rotate(360deg); }}@-ms-keyframes pace-spinner {0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }}@keyframes pace-spinner {0% { transform: rotate(0deg); transform: rotate(0deg); }100% { transform: rotate(360deg); transform: rotate(360deg); }}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>友情链接</title>
+      <link href="/friend/index.html"/>
+      <url>/friend/index.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>欢迎交换友链</p></blockquote>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1426,17 +1437,6 @@
       <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/css/flash.css"/>
-      <url>/css/flash.css</url>
-      
-        <content type="html"><![CDATA[.pace {-webkit-pointer-events: none;pointer-events: none;-webkit-user-select: none;-moz-user-select: none;user-select: none;}.pace-inactive {display: none;}.pace .pace-progress {background: #29d;position: fixed;z-index: 2000;top: 0;right: 100%;width: 100%;height: 2px;}.pace .pace-progress-inner {display: block;position: absolute;right: 0px;width: 100px;height: 100%;box-shadow: 0 0 10px #29d, 0 0 5px #29d;opacity: 1.0;-webkit-transform: rotate(3deg) translate(0px, -4px);-moz-transform: rotate(3deg) translate(0px, -4px);-ms-transform: rotate(3deg) translate(0px, -4px);-o-transform: rotate(3deg) translate(0px, -4px);transform: rotate(3deg) translate(0px, -4px);}.pace .pace-activity {display: block;position: fixed;z-index: 2000;top: 15px;right: 15px;width: 14px;height: 14px;border: solid 2px transparent;border-top-color: #29d;border-left-color: #29d;border-radius: 10px;-webkit-animation: pace-spinner 400ms linear infinite;-moz-animation: pace-spinner 400ms linear infinite;-ms-animation: pace-spinner 400ms linear infinite;-o-animation: pace-spinner 400ms linear infinite;animation: pace-spinner 400ms linear infinite;}@-webkit-keyframes pace-spinner {0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}@-moz-keyframes pace-spinner {0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }}@-o-keyframes pace-spinner {0% { -o-transform: rotate(0deg); transform: rotate(0deg); }100% { -o-transform: rotate(360deg); transform: rotate(360deg); }}@-ms-keyframes pace-spinner {0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }}@keyframes pace-spinner {0% { transform: rotate(0deg); transform: rotate(0deg); }100% { transform: rotate(360deg); transform: rotate(360deg); }}]]></content>
       
     </entry>
     
