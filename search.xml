@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>汇编语言练习</title>
+      <link href="/2023/05/04/AssemblyLanguageWorks.html"/>
+      <url>/2023/05/04/AssemblyLanguageWorks.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="变量BUF3中存放着10个有符号的字节数据，编程将这10个数按从小到大排序。"><a href="#变量BUF3中存放着10个有符号的字节数据，编程将这10个数按从小到大排序。" class="headerlink" title="变量BUF3中存放着10个有符号的字节数据，编程将这10个数按从小到大排序。"></a>变量BUF3中存放着10个有符号的字节数据，编程将这10个数按从小到大排序。</h3><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>双指针排序。BP留在原地，SI不断移动，一旦发现比BP小的值，就把那个值和BP交换，SI从左往右走一轮可以使得BP所在位置的值最小。一轮走完再开一轮，BP向右移动一位，用以存放次小值，SI再去探险。如此循环。</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">;变量BUF3中存放着10个有符号的字节数据，编程将这10个数按从小到大排序。</span><br><span class="line">DSEG SEGMENT</span><br><span class="line">    BUF3       DB 10,9,8,7,6,5,4,3,2,1</span><br><span class="line">    BUFFLENGTH DB $-BUF3</span><br><span class="line">DSEG ENDS</span><br><span class="line"></span><br><span class="line">SSEG SEGMENT</span><br><span class="line">SSEG ENDS</span><br><span class="line"></span><br><span class="line">CSEG SEGMENT</span><br><span class="line">                   ASSUME DS:DSEG,SS:SSEG,CS:CSEG</span><br><span class="line">    START:         </span><br><span class="line">                   MOV    AX,DSEG</span><br><span class="line">                   MOV    DS,AX</span><br><span class="line"></span><br><span class="line">                   MOV    BP,OFFSET BUF3             ;用以指向BUF数组需要放置最小数的位置</span><br><span class="line">                   LEA    SI,BUF3                    ;移动这个指针来寻找最小值</span><br><span class="line"></span><br><span class="line">                   MOV    DH,BUFFLENGTH              ;外循环次数</span><br><span class="line"></span><br><span class="line">    ;MOV    DL,BUFFLENGTH-1            ;不能直接这么写，这样会把BUFFLENGTH处理为地址。地址减一，就成数组的最后一个值的地址了。</span><br><span class="line">                   MOV    DL,BUFFLENGTH</span><br><span class="line">                   DEC    DL                         ;DL是内循环次数</span><br><span class="line"></span><br><span class="line">    OUTERLOOP:     </span><br><span class="line">                   CMP    DH,0                       ;查看是否需要进行外循环</span><br><span class="line">                   JE     ENDLOOP</span><br><span class="line">                   DEC    DH</span><br><span class="line">                   MOV    DL,DH                      ;重置内循环次数</span><br><span class="line"></span><br><span class="line">                   MOV    SI,BP                      ;需要则，将用以移动寻找最小值的指针SI重置到需要放置最小值的指针处</span><br><span class="line">                   JMP    INNERLOOP</span><br><span class="line"></span><br><span class="line">    INNERLOOP:     </span><br><span class="line">                   INC    SI                         ;让SI自增，指向下一个数组元素</span><br><span class="line">                   MOV    AL,DS:[BP]</span><br><span class="line">                   CMP    DS:[SI],AL</span><br><span class="line">                   JLE    UPDATEMIN</span><br><span class="line">                   JMP    BEFORENEXTLOOP</span><br><span class="line">    </span><br><span class="line">    UPDATEMIN:                                       ;把到目前为止的最小值交换到目标最小值位置</span><br><span class="line">                   MOV    AL,DS:[BP]</span><br><span class="line">                   XCHG   AL,DS:[SI]</span><br><span class="line">                   MOV    DS:[BP],AL</span><br><span class="line"></span><br><span class="line">    BEFORENEXTLOOP:                                  ;在内循环进行下一次之前</span><br><span class="line">                   DEC    DL                         ;内循环剩余次数自减</span><br><span class="line">                   CMP    DL,0                       ;判断是否需要还需要进行内循环</span><br><span class="line">                   JG     INNERLOOP                  ;需要则进行</span><br><span class="line"></span><br><span class="line">                   INC    BP                         ;否则自增外循环初始数组地址</span><br><span class="line">                   JMP    OUTERLOOP                  ;进行外循环</span><br><span class="line">    ENDLOOP:       </span><br><span class="line">                   MOV    AH,4CH</span><br><span class="line">                   INT    21H</span><br><span class="line"></span><br><span class="line">CSEG ENDS</span><br><span class="line">END START</span><br></pre></td></tr></table></figure><h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul><li>不能写 “MOV    DL, BUFFLENGTH-1” ，因为会把BUFFLENGTH当成地址来减一然后取新地址的值，会导致DL中存放的是上一个变量即BUF3数组的最后一个数。</li><li>使用BP和SI的时候，需要指定段地址为DS，不然会找不到数据（虽然我也不知道为什么以前不写没事）。</li><li>涉及到双循环还是自己操作循环数比较方便。</li></ul><h4 id="结果图"><a href="#结果图" class="headerlink" title="结果图"></a>结果图</h4><p><img src="https://pics.kahvia.cn/img/%E5%8F%98%E9%87%8FBUF3%E4%B8%AD%E5%AD%98%E6%94%BE%E7%9D%8010%E4%B8%AA%E6%9C%89%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%AD%97%E8%8A%82%E6%95%B0%E6%8D%AE%EF%BC%8C%E7%BC%96%E7%A8%8B%E5%B0%86%E8%BF%9910%E4%B8%AA%E6%95%B0%E6%8C%89%E4%BB%8E%E5%B0%8F%E5%88%B0%E5%A4%A7%E6%8E%92%E5%BA%8F.png" alt="结果图"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微机 汇编 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AssemblyLanguage </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端练习1</title>
       <link href="/2023/04/18/HTML-Study.html"/>
       <url>/2023/04/18/HTML-Study.html</url>
@@ -1358,6 +1383,50 @@
     
     
     <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/custom.css"/>
+      <url>/css/custom.css</url>
+      
+        <content type="html"><![CDATA[/* @font-face {  font-family: Candyhome;  src: url(https://npm.elemecdn.com/anzhiyu-blog@1.1.6/fonts/Candyhome.ttf);  font-display: swap;  font-weight: lighter;} */@font-face {    font-family: ZhuZiAYuanJWD;    src: url(https://npm.elemecdn.com/anzhiyu-blog@1.1.6/fonts/ZhuZiAWan.woff2);    font-display: swap;    font-weight: lighter;}div#menus {    font-family: "ZhuZiAYuanJWD";}h1#site-title {    font-family: ZhuZiAYuanJWD;    font-size: 3em !important;}a.article-title,a.blog-slider__title,a.categoryBar-list-link,h1.post-title {    font-family: ZhuZiAYuanJWD;}.iconfont {    font-family: "iconfont" !important;    font-size: 3em;    /* 可以定义图标大小 */    font-style: normal;    -webkit-font-smoothing: antialiased;    -moz-osx-font-smoothing: grayscale;}/* 时间轴生肖icon */svg.icon {    /* 这里定义svg.icon，避免和Butterfly自带的note标签冲突 */    width: 1em;    height: 1em;    /* width和height定义图标的默认宽度和高度*/    vertical-align: -0.15em;    fill: currentColor;    overflow: hidden;}.icon-zhongbiao::before {    color: #f7c768;}/* bilibli番剧插件 */#article-container .bangumi-tab.bangumi-active {    background: var(--anzhiyu-theme);    color: var(--anzhiyu-ahoverbg);    border-radius: 10px;}a.bangumi-tab:hover {    text-decoration: none !important;}.bangumi-button:hover {    background: var(--anzhiyu-theme) !important;    border-radius: 10px !important;    color: var(--anzhiyu-ahoverbg) !important;}a.bangumi-button.bangumi-nextpage:hover {    text-decoration: none !important;}.bangumi-button {    padding: 5px 10px !important;}a.bangumi-tab {    padding: 5px 10px !important;}svg.icon.faa-tada {    font-size: 1.1em;}.bangumi-info-item {    border-right: 1px solid #f2b94b;}.bangumi-info-item span {    color: #f2b94b;}.bangumi-info-item em {    color: #f2b94b;}/* 解决artitalk的图标问题 */#uploadSource>svg {    width: 1.19em;    height: 1.5em;}/*top-img黑色透明玻璃效果移除，不建议加，除非你执着于完全一图流或者背景图对比色明显 */#page-header:not(.not-top-img):before {    background-color: transparent !important;}/* 首页文章卡片 */#recent-posts>.recent-post-item {    background: rgba(255, 255, 255, 0.9);}/* 首页侧栏卡片 */#aside-content .card-widget {    background: rgba(255, 255, 255, 0.9);}/* 文章页面正文背景 */div#post {    background: rgba(255, 255, 255, 0.9);}/* 分页页面 */div#page {    background: rgba(255, 255, 255, 0.9);}/* 归档页面 */div#archive {    background: rgba(255, 255, 255, 0.9);}/* 标签页面 */div#tag {    background: rgba(255, 255, 255, 0.9);}/* 分类页面 */div#category {    background: rgba(255, 255, 255, 0.9);}/*夜间模式伪类遮罩层透明*/[data-theme="dark"] #recent-posts>.recent-post-item {    background: #121212;}[data-theme="dark"] .card-widget {    background: #121212 !important;}[data-theme="dark"] div#post {    background: #121212 !important;}[data-theme="dark"] div#tag {    background: #121212 !important;}[data-theme="dark"] div#archive {    background: #121212 !important;}[data-theme="dark"] div#page {    background: #121212 !important;}[data-theme="dark"] div#category {    background: #121212 !important;}[data-theme="dark"] div#category {    background: transparent !important;}/* 页脚透明 */#footer {    background: transparent !important;}/* 头图透明 */#page-header {    background: transparent !important;}#rightside>div>button {    border-radius: 5px;}/* 滚动条 */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #425aef;    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}::-moz-selection {    color: #fff;    background-color: #425aef;}/* 音乐播放器 *//* .aplayer .aplayer-lrc {    display: none !important;  } */.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {    left: -66px !important;    transition: all 0.3s;    /* 默认情况下缩进左侧66px，只留一点箭头部分 */}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {    left: 0 !important;    transition: all 0.3s;    /* 鼠标悬停是左侧缩进归零，完全显示按钮 */}.aplayer.aplayer-fixed {    z-index: 999999 !important;}/* 评论框  */.vwrap {    box-shadow: 2px 2px 5px #bbb;    background: rgba(255, 255, 255, 0.3);    border-radius: 8px;    padding: 30px;    margin: 30px 0px 30px 0px;}/* 设置评论框 */.vcard {    box-shadow: 2px 2px 5px #bbb;    background: rgba(255, 255, 255, 0.3);    border-radius: 8px;    padding: 30px;    margin: 30px 0px 0px 0px;}/* 鼠标图标 */body {    cursor: url("/img/x1.cur"), auto;}a,[type="button"]:not(:disabled),[type="reset"]:not(:disabled),[type="submit"]:not(:disabled),button:not(:disabled) {    cursor: url("/img/x2.cur"), auto !important;}/* md网站下划线 */#article-container a:hover {    text-decoration: none !important;}#article-container #hpp_talk p img {    display: inline;}/* 404页面 */#error-wrap {    position: absolute;    top: 40%;    right: 0;    left: 0;    margin: 0 auto;    padding: 0 1rem;    max-width: 1000px;    transform: translate(0, -50%);}#error-wrap .error-content {    display: flex;    flex-direction: row;    justify-content: center;    align-items: center;    margin: 0 1rem;    height: 18rem;    border-radius: 8px;    background: var(--card-bg);    box-shadow: var(--card-box-shadow);    transition: all 0.3s;}#error-wrap .error-content .error-img {    box-flex: 1;    flex: 1;    height: 100%;    border-top-left-radius: 8px;    border-bottom-left-radius: 8px;    background-color: #425aef;    background-position: center;    background-size: cover;}#error-wrap .error-content .error-info {    box-flex: 1;    flex: 1;    padding: 0.5rem;    text-align: center;    font-size: 14px;    font-family: Titillium Web, "PingFang SC", "Hiragino Sans GB", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;}#error-wrap .error-content .error-info .error_title {    margin-top: -4rem;    font-size: 9em;}#error-wrap .error-content .error-info .error_subtitle {    margin-top: -3.5rem;    word-break: break-word;    font-size: 1.6em;}#error-wrap .error-content .error-info a {    display: inline-block;    margin-top: 0.5rem;    padding: 0.3rem 1.5rem;    background: var(--btn-bg);    color: var(--btn-color);}#body-wrap.error .aside-list {    display: flex;    flex-direction: row;    flex-wrap: nowrap;    bottom: 0px;    position: absolute;    padding: 1rem;    width: 100%;    overflow: scroll;}#body-wrap.error .aside-list .aside-list-group {    display: flex;    flex-direction: row;    flex-wrap: nowrap;    max-width: 1200px;    margin: 0 auto;}#body-wrap.error .aside-list .aside-list-item {    padding: 0.5rem;}#body-wrap.error .aside-list .aside-list-item img {    width: 100%;    object-fit: cover;    border-radius: 12px;}#body-wrap.error .aside-list .aside-list-item .thumbnail {    overflow: hidden;    width: 230px;    height: 143px;    background: var(--anzhiyu-card-bg);    display: flex;}#body-wrap.error .aside-list .aside-list-item .content .title {    -webkit-line-clamp: 2;    overflow: hidden;    display: -webkit-box;    -webkit-box-orient: vertical;    line-height: 1.5;    justify-content: center;    align-items: flex-end;    align-content: center;    padding-top: 0.5rem;    color: white;}#body-wrap.error .aside-list .aside-list-item .content time {    display: none;}/* 代码框主题 */#article-container figure.highlight {    border-radius: 10px;}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>赞赏</title>
+      <link href="/donate/index.html"/>
+      <url>/donate/index.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>如果喜欢我的博客，或者喜欢我的博客主题，可以考虑赞赏一下哦，非常感激！<br>网站所需的服务器和 CDN 都是不小的开支，日常维护也需要大量精力。 <br>你们的支持是我前进的最大动力！</p></blockquote>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>留言板</title>
       <link href="/comment/index.html"/>
       <url>/comment/index.html</url>
@@ -1380,66 +1449,11 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>赞赏</title>
-      <link href="/donate/index.html"/>
-      <url>/donate/index.html</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>如果喜欢我的博客，或者喜欢我的博客主题，可以考虑赞赏一下哦，非常感激！<br>网站所需的服务器和 CDN 都是不小的开支，日常维护也需要大量精力。 <br>你们的支持是我前进的最大动力！</p></blockquote>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/css/custom.css"/>
-      <url>/css/custom.css</url>
-      
-        <content type="html"><![CDATA[/* @font-face {  font-family: Candyhome;  src: url(https://npm.elemecdn.com/anzhiyu-blog@1.1.6/fonts/Candyhome.ttf);  font-display: swap;  font-weight: lighter;} */@font-face {    font-family: ZhuZiAYuanJWD;    src: url(https://npm.elemecdn.com/anzhiyu-blog@1.1.6/fonts/ZhuZiAWan.woff2);    font-display: swap;    font-weight: lighter;}div#menus {    font-family: "ZhuZiAYuanJWD";}h1#site-title {    font-family: ZhuZiAYuanJWD;    font-size: 3em !important;}a.article-title,a.blog-slider__title,a.categoryBar-list-link,h1.post-title {    font-family: ZhuZiAYuanJWD;}.iconfont {    font-family: "iconfont" !important;    font-size: 3em;    /* 可以定义图标大小 */    font-style: normal;    -webkit-font-smoothing: antialiased;    -moz-osx-font-smoothing: grayscale;}/* 时间轴生肖icon */svg.icon {    /* 这里定义svg.icon，避免和Butterfly自带的note标签冲突 */    width: 1em;    height: 1em;    /* width和height定义图标的默认宽度和高度*/    vertical-align: -0.15em;    fill: currentColor;    overflow: hidden;}.icon-zhongbiao::before {    color: #f7c768;}/* bilibli番剧插件 */#article-container .bangumi-tab.bangumi-active {    background: var(--anzhiyu-theme);    color: var(--anzhiyu-ahoverbg);    border-radius: 10px;}a.bangumi-tab:hover {    text-decoration: none !important;}.bangumi-button:hover {    background: var(--anzhiyu-theme) !important;    border-radius: 10px !important;    color: var(--anzhiyu-ahoverbg) !important;}a.bangumi-button.bangumi-nextpage:hover {    text-decoration: none !important;}.bangumi-button {    padding: 5px 10px !important;}a.bangumi-tab {    padding: 5px 10px !important;}svg.icon.faa-tada {    font-size: 1.1em;}.bangumi-info-item {    border-right: 1px solid #f2b94b;}.bangumi-info-item span {    color: #f2b94b;}.bangumi-info-item em {    color: #f2b94b;}/* 解决artitalk的图标问题 */#uploadSource>svg {    width: 1.19em;    height: 1.5em;}/*top-img黑色透明玻璃效果移除，不建议加，除非你执着于完全一图流或者背景图对比色明显 */#page-header:not(.not-top-img):before {    background-color: transparent !important;}/* 首页文章卡片 */#recent-posts>.recent-post-item {    background: rgba(255, 255, 255, 0.9);}/* 首页侧栏卡片 */#aside-content .card-widget {    background: rgba(255, 255, 255, 0.9);}/* 文章页面正文背景 */div#post {    background: rgba(255, 255, 255, 0.9);}/* 分页页面 */div#page {    background: rgba(255, 255, 255, 0.9);}/* 归档页面 */div#archive {    background: rgba(255, 255, 255, 0.9);}/* 标签页面 */div#tag {    background: rgba(255, 255, 255, 0.9);}/* 分类页面 */div#category {    background: rgba(255, 255, 255, 0.9);}/*夜间模式伪类遮罩层透明*/[data-theme="dark"] #recent-posts>.recent-post-item {    background: #121212;}[data-theme="dark"] .card-widget {    background: #121212 !important;}[data-theme="dark"] div#post {    background: #121212 !important;}[data-theme="dark"] div#tag {    background: #121212 !important;}[data-theme="dark"] div#archive {    background: #121212 !important;}[data-theme="dark"] div#page {    background: #121212 !important;}[data-theme="dark"] div#category {    background: #121212 !important;}[data-theme="dark"] div#category {    background: transparent !important;}/* 页脚透明 */#footer {    background: transparent !important;}/* 头图透明 */#page-header {    background: transparent !important;}#rightside>div>button {    border-radius: 5px;}/* 滚动条 */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #425aef;    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}::-moz-selection {    color: #fff;    background-color: #425aef;}/* 音乐播放器 *//* .aplayer .aplayer-lrc {    display: none !important;  } */.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {    left: -66px !important;    transition: all 0.3s;    /* 默认情况下缩进左侧66px，只留一点箭头部分 */}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {    left: 0 !important;    transition: all 0.3s;    /* 鼠标悬停是左侧缩进归零，完全显示按钮 */}.aplayer.aplayer-fixed {    z-index: 999999 !important;}/* 评论框  */.vwrap {    box-shadow: 2px 2px 5px #bbb;    background: rgba(255, 255, 255, 0.3);    border-radius: 8px;    padding: 30px;    margin: 30px 0px 30px 0px;}/* 设置评论框 */.vcard {    box-shadow: 2px 2px 5px #bbb;    background: rgba(255, 255, 255, 0.3);    border-radius: 8px;    padding: 30px;    margin: 30px 0px 0px 0px;}/* 鼠标图标 */body {    cursor: url("/img/x1.cur"), auto;}a,[type="button"]:not(:disabled),[type="reset"]:not(:disabled),[type="submit"]:not(:disabled),button:not(:disabled) {    cursor: url("/img/x2.cur"), auto !important;}/* md网站下划线 */#article-container a:hover {    text-decoration: none !important;}#article-container #hpp_talk p img {    display: inline;}/* 404页面 */#error-wrap {    position: absolute;    top: 40%;    right: 0;    left: 0;    margin: 0 auto;    padding: 0 1rem;    max-width: 1000px;    transform: translate(0, -50%);}#error-wrap .error-content {    display: flex;    flex-direction: row;    justify-content: center;    align-items: center;    margin: 0 1rem;    height: 18rem;    border-radius: 8px;    background: var(--card-bg);    box-shadow: var(--card-box-shadow);    transition: all 0.3s;}#error-wrap .error-content .error-img {    box-flex: 1;    flex: 1;    height: 100%;    border-top-left-radius: 8px;    border-bottom-left-radius: 8px;    background-color: #425aef;    background-position: center;    background-size: cover;}#error-wrap .error-content .error-info {    box-flex: 1;    flex: 1;    padding: 0.5rem;    text-align: center;    font-size: 14px;    font-family: Titillium Web, "PingFang SC", "Hiragino Sans GB", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;}#error-wrap .error-content .error-info .error_title {    margin-top: -4rem;    font-size: 9em;}#error-wrap .error-content .error-info .error_subtitle {    margin-top: -3.5rem;    word-break: break-word;    font-size: 1.6em;}#error-wrap .error-content .error-info a {    display: inline-block;    margin-top: 0.5rem;    padding: 0.3rem 1.5rem;    background: var(--btn-bg);    color: var(--btn-color);}#body-wrap.error .aside-list {    display: flex;    flex-direction: row;    flex-wrap: nowrap;    bottom: 0px;    position: absolute;    padding: 1rem;    width: 100%;    overflow: scroll;}#body-wrap.error .aside-list .aside-list-group {    display: flex;    flex-direction: row;    flex-wrap: nowrap;    max-width: 1200px;    margin: 0 auto;}#body-wrap.error .aside-list .aside-list-item {    padding: 0.5rem;}#body-wrap.error .aside-list .aside-list-item img {    width: 100%;    object-fit: cover;    border-radius: 12px;}#body-wrap.error .aside-list .aside-list-item .thumbnail {    overflow: hidden;    width: 230px;    height: 143px;    background: var(--anzhiyu-card-bg);    display: flex;}#body-wrap.error .aside-list .aside-list-item .content .title {    -webkit-line-clamp: 2;    overflow: hidden;    display: -webkit-box;    -webkit-box-orient: vertical;    line-height: 1.5;    justify-content: center;    align-items: flex-end;    align-content: center;    padding-top: 0.5rem;    color: white;}#body-wrap.error .aside-list .aside-list-item .content time {    display: none;}/* 代码框主题 */#article-container figure.highlight {    border-radius: 10px;}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/css/flash.css"/>
-      <url>/css/flash.css</url>
-      
-        <content type="html"><![CDATA[.pace {-webkit-pointer-events: none;pointer-events: none;-webkit-user-select: none;-moz-user-select: none;user-select: none;}.pace-inactive {display: none;}.pace .pace-progress {background: #29d;position: fixed;z-index: 2000;top: 0;right: 100%;width: 100%;height: 2px;}.pace .pace-progress-inner {display: block;position: absolute;right: 0px;width: 100px;height: 100%;box-shadow: 0 0 10px #29d, 0 0 5px #29d;opacity: 1.0;-webkit-transform: rotate(3deg) translate(0px, -4px);-moz-transform: rotate(3deg) translate(0px, -4px);-ms-transform: rotate(3deg) translate(0px, -4px);-o-transform: rotate(3deg) translate(0px, -4px);transform: rotate(3deg) translate(0px, -4px);}.pace .pace-activity {display: block;position: fixed;z-index: 2000;top: 15px;right: 15px;width: 14px;height: 14px;border: solid 2px transparent;border-top-color: #29d;border-left-color: #29d;border-radius: 10px;-webkit-animation: pace-spinner 400ms linear infinite;-moz-animation: pace-spinner 400ms linear infinite;-ms-animation: pace-spinner 400ms linear infinite;-o-animation: pace-spinner 400ms linear infinite;animation: pace-spinner 400ms linear infinite;}@-webkit-keyframes pace-spinner {0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}@-moz-keyframes pace-spinner {0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }}@-o-keyframes pace-spinner {0% { -o-transform: rotate(0deg); transform: rotate(0deg); }100% { -o-transform: rotate(360deg); transform: rotate(360deg); }}@-ms-keyframes pace-spinner {0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }}@keyframes pace-spinner {0% { transform: rotate(0deg); transform: rotate(0deg); }100% { transform: rotate(360deg); transform: rotate(360deg); }}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>友情链接</title>
       <link href="/friend/index.html"/>
       <url>/friend/index.html</url>
       
         <content type="html"><![CDATA[<blockquote><p>欢迎交换友链</p></blockquote>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>标签</title>
-      <link href="/tag/index.html"/>
-      <url>/tag/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -1457,11 +1471,22 @@
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>标签</title>
+      <link href="/tag/index.html"/>
+      <url>/tag/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/flash.css"/>
+      <url>/css/flash.css</url>
+      
+        <content type="html"><![CDATA[.pace {-webkit-pointer-events: none;pointer-events: none;-webkit-user-select: none;-moz-user-select: none;user-select: none;}.pace-inactive {display: none;}.pace .pace-progress {background: #29d;position: fixed;z-index: 2000;top: 0;right: 100%;width: 100%;height: 2px;}.pace .pace-progress-inner {display: block;position: absolute;right: 0px;width: 100px;height: 100%;box-shadow: 0 0 10px #29d, 0 0 5px #29d;opacity: 1.0;-webkit-transform: rotate(3deg) translate(0px, -4px);-moz-transform: rotate(3deg) translate(0px, -4px);-ms-transform: rotate(3deg) translate(0px, -4px);-o-transform: rotate(3deg) translate(0px, -4px);transform: rotate(3deg) translate(0px, -4px);}.pace .pace-activity {display: block;position: fixed;z-index: 2000;top: 15px;right: 15px;width: 14px;height: 14px;border: solid 2px transparent;border-top-color: #29d;border-left-color: #29d;border-radius: 10px;-webkit-animation: pace-spinner 400ms linear infinite;-moz-animation: pace-spinner 400ms linear infinite;-ms-animation: pace-spinner 400ms linear infinite;-o-animation: pace-spinner 400ms linear infinite;animation: pace-spinner 400ms linear infinite;}@-webkit-keyframes pace-spinner {0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}@-moz-keyframes pace-spinner {0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }}@-o-keyframes pace-spinner {0% { -o-transform: rotate(0deg); transform: rotate(0deg); }100% { -o-transform: rotate(360deg); transform: rotate(360deg); }}@-ms-keyframes pace-spinner {0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }}@keyframes pace-spinner {0% { transform: rotate(0deg); transform: rotate(0deg); }100% { transform: rotate(360deg); transform: rotate(360deg); }}]]></content>
       
     </entry>
     
