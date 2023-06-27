@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Kahvia&#39;s Home</title>
   
-  <subtitle>Never give up!</subtitle>
+  <subtitle>你站在桥上看风景，看风景人在楼上看你。</subtitle>
   <link href="https://blog.kahvia.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.kahvia.cn/"/>
-  <updated>2023-05-04T08:27:47.201Z</updated>
+  <updated>2023-06-27T13:46:42.139Z</updated>
   <id>https://blog.kahvia.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NodeJs使用</title>
+    <link href="https://blog.kahvia.cn/2023/06/27/NodeJs.html"/>
+    <id>https://blog.kahvia.cn/2023/06/27/NodeJs.html</id>
+    <published>2023-06-27T02:06:42.700Z</published>
+    <updated>2023-06-27T13:46:42.139Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Commonjs和ECMAScript语法"><a href="#Commonjs和ECMAScript语法" class="headerlink" title="Commonjs和ECMAScript语法"></a>Commonjs和ECMAScript语法</h2><h3 id="Commonjs"><a href="#Commonjs" class="headerlink" title="Commonjs"></a>Commonjs</h3><p>Nodejs中默认采用Commonjs语法。</p><p>模块导出格式如下。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//commonjs语法导出自定义模块</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">setResHeader</span>: setResHeader</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>模块导入格式如下。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入自定义工具模块</span></span><br><span class="line"><span class="keyword">let</span> resHeaderUtil = <span class="built_in">require</span>(<span class="string">&quot;./utils/resHeaderUtil&quot;</span>)</span><br></pre></td></tr></table></figure><h3 id="ECMAScript"><a href="#ECMAScript" class="headerlink" title="ECMAScript"></a>ECMAScript</h3><p>比如vue这种框架，采用的就是ECMAScript语法。要使用这种语法，首先得在package.json中指出type的值。</p><blockquote><p>When set to “module”, the type field allows a package to specify all .js files within are ES modules. If the “type” field is omitted or set to “commonjs”, all .js files are treated as CommonJS.</p></blockquote><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;module&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p>这便设置成了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Commonjs和ECMAScript语法&quot;&gt;&lt;a href=&quot;#Commonjs和ECMAScript语法&quot; class=&quot;headerlink&quot; title=&quot;Commonjs和ECMAScript语法&quot;&gt;&lt;/a&gt;Commonjs和ECMAScript语法&lt;/</summary>
+      
+    
+    
+    
+    <category term="知识" scheme="https://blog.kahvia.cn/categories/%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="node.js" scheme="https://blog.kahvia.cn/tags/node-js/"/>
+    
+  </entry>
   
   <entry>
     <title>汇编语言练习</title>
@@ -490,31 +514,6 @@
     
     
     <category term="MicroService" scheme="https://blog.kahvia.cn/tags/MicroService/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Springboot项目打 jar 包没有webapp中的静态资源</title>
-    <link href="https://blog.kahvia.cn/2022/10/07/SpringbootWithoutWebapp.html"/>
-    <id>https://blog.kahvia.cn/2022/10/07/SpringbootWithoutWebapp.html</id>
-    <published>2022-10-07T03:21:50.351Z</published>
-    <updated>2022-10-24T04:13:33.074Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="问题发生场景"><a href="#问题发生场景" class="headerlink" title="问题发生场景"></a>问题发生场景</h3><p>以下场景都建立在 maven 打 jar 包的基础上。</p><p>昨日我如往常一样，在springboot项目中新建 webapp 文件夹，然后在里面放俩空文件夹，作为项目里文件上传中转的地方。然后发现打包后程序运行时并不能找到webapp文件夹中的静态资源。查看编译后产生的 target 目录发现，webapp并没有被编译。如下图所示。</p><p><img src="https://img1.imgtp.com/2022/10/09/KyQk4s01.png" alt="webapp未编译"></p><p>而平时开发，直接通过 idea 运行的时候，却会编译 webapp 下的资源文件到 classes 目录下。如下图所示。</p><p><img src="https://img1.imgtp.com/2022/10/09/0NJ4MtZB.png" alt="idea直接运行"></p><span id="more"></span><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>如果跟我一样不愿意放弃 webapp 的使用，那么想要解决这个问题，就需要手动指定项目构建时的资源路径。</p><p>在 pom.xml 文件的 build 标签中，添加以下代码，手动指定资源路径。</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/webapp<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">targetPath</span>&gt;</span>META-INF/resources<span class="tag">&lt;/<span class="name">targetPath</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/**<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure><p>ps：这样只指定webapp的路径的话，resource 中的 static 和 template 就不会被编译了。要是都想要的话，就得都手动指定。</p><p>也就是说，springboot 使用 maven编译时，默认只寻找 resources 中的静态资源，而忽略 webapp。</p><h3 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h3><p>自问：为什么我以前学习 spring mvc 的时候，用 webapp 文件夹存放静态资源没有任何问题呢？</p><p>自答：非要说 springboot 和 spring mvc 直观上有哪里不太一样的话，那就是打包方式了。以前学习 spring mvc 的时候，都是打 war 包，然后部署到自己的 tomcat 服务器上。静态资源放在 webapp 中，而我似乎也一直是这么用的。但是当我学了spring boot后，项目都是在本地的idea直接运行，并没有正儿八经打包，然后手动部署过。因为 idea 自身会编译 webapp 下的文件，所以一直没有发现过问题。</p><p>所以另一种解决方案就是把 spring boot 打成 war 包。</p><h3 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h3><p>究其原因还是项目打成 jar 包和 war 包的区别。这里采用网上的描述。</p><ul><li><p>jar文件包括java普通类、资源文件和普通文件，在maven中即是打包 src&#x2F;main&#x2F;java 和 src&#x2F;main&#x2F;resources 资源文件夹下的所有文件。在打包的时候会自动生成 META-INF 文件夹，用于存储 maven 的 pom 信息和 MANIFEST.MF 文件。（未包含 webapp 文件夹）</p></li><li><p>war文件包含全部的web应用程序，即所有的java类，配置信息和jsp、js等静态资源。（也就是说 webapp 文件夹也包含了）</p></li></ul><p>或许这就是为什么学习 spring mvc 的时候我还在前后端一体， 而学习 spring boot 后却下意识的用起了前后端分离吧。码农的直觉？</p>]]></content>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;问题发生场景&quot;&gt;&lt;a href=&quot;#问题发生场景&quot; class=&quot;headerlink&quot; title=&quot;问题发生场景&quot;&gt;&lt;/a&gt;问题发生场景&lt;/h3&gt;&lt;p&gt;以下场景都建立在 maven 打 jar 包的基础上。&lt;/p&gt;
-&lt;p&gt;昨日我如往常一样，在springboot项目中新建 webapp 文件夹，然后在里面放俩空文件夹，作为项目里文件上传中转的地方。然后发现打包后程序运行时并不能找到webapp文件夹中的静态资源。查看编译后产生的 target 目录发现，webapp并没有被编译。如下图所示。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://img1.imgtp.com/2022/10/09/KyQk4s01.png&quot; alt=&quot;webapp未编译&quot;&gt;&lt;/p&gt;
-&lt;p&gt;而平时开发，直接通过 idea 运行的时候，却会编译 webapp 下的资源文件到 classes 目录下。如下图所示。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://img1.imgtp.com/2022/10/09/0NJ4MtZB.png&quot; alt=&quot;idea直接运行&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="小问题" scheme="https://blog.kahvia.cn/categories/%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
-    
-    
-    <category term="Springboot" scheme="https://blog.kahvia.cn/tags/Springboot/"/>
     
   </entry>
   
