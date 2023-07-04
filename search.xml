@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>响应式布局</title>
+      <link href="/2023/07/04/ResponsiveDesign.html"/>
+      <url>/2023/07/04/ResponsiveDesign.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h3><p>响应式布局，是为五个不同的屏幕尺寸制定不同的显示比例。这是网页收缩导致网页布局变乱的究极解决方案。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html element </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Nodejs-包</title>
       <link href="/2023/06/28/NodeJsPackage.html"/>
       <url>/2023/06/28/NodeJsPackage.html</url>
@@ -1447,6 +1472,28 @@
     
     
     <entry>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Hello-It’s-Kahvia"><a href="#Hello-It’s-Kahvia" class="headerlink" title="Hello, It’s Kahvia ."></a>Hello, It’s <a href="#">Kahvia</a> .</h1><hr><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>是雪枫糖呀，也是Kahvia呀。</p><blockquote><p><strong>天不生我雪枫糖，三大万古如长夜。</strong></p></blockquote><h3 id="能力"><a href="#能力" class="headerlink" title="能力"></a>能力</h3><ol><li>Java</li><li>Spring Mvc &#x2F; Spring boot</li><li>Vue2</li></ol><h3 id="待学习"><a href="#待学习" class="headerlink" title="待学习"></a>待学习</h3><ul><li><input disabled="" type="checkbox"> Dart</li><li><input disabled="" type="checkbox"> Flutter</li><li><input disabled="" type="checkbox"> Redis</li><li><input disabled="" type="checkbox"> Spring Cloud</li><li><input disabled="" type="checkbox"> React</li></ul>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>留言板</title>
+      <link href="/comment/index.html"/>
+      <url>/comment/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -1469,17 +1516,6 @@
     
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="Hello-It’s-Kahvia"><a href="#Hello-It’s-Kahvia" class="headerlink" title="Hello, It’s Kahvia ."></a>Hello, It’s <a href="#">Kahvia</a> .</h1><hr><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>是雪枫糖呀，也是Kahvia呀。</p><blockquote><p><strong>天不生我雪枫糖，三大万古如长夜。</strong></p></blockquote><h3 id="能力"><a href="#能力" class="headerlink" title="能力"></a>能力</h3><ol><li>Java</li><li>Spring Mvc &#x2F; Spring boot</li><li>Vue2</li></ol><h3 id="待学习"><a href="#待学习" class="headerlink" title="待学习"></a>待学习</h3><ul><li><input disabled="" type="checkbox"> Dart</li><li><input disabled="" type="checkbox"> Flutter</li><li><input disabled="" type="checkbox"> Redis</li><li><input disabled="" type="checkbox"> Spring Cloud</li><li><input disabled="" type="checkbox"> React</li></ul>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>赞赏</title>
       <link href="/donate/index.html"/>
       <url>/donate/index.html</url>
@@ -1491,31 +1527,20 @@
     
     
     <entry>
-      <title>友情链接</title>
-      <link href="/friend/index.html"/>
-      <url>/friend/index.html</url>
+      <title></title>
+      <link href="/css/flash.css"/>
+      <url>/css/flash.css</url>
       
-        <content type="html"><![CDATA[<blockquote><p>欢迎交换友链</p></blockquote>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>留言板</title>
-      <link href="/comment/index.html"/>
-      <url>/comment/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[.pace {-webkit-pointer-events: none;pointer-events: none;-webkit-user-select: none;-moz-user-select: none;user-select: none;}.pace-inactive {display: none;}.pace .pace-progress {background: #29d;position: fixed;z-index: 2000;top: 0;right: 100%;width: 100%;height: 2px;}.pace .pace-progress-inner {display: block;position: absolute;right: 0px;width: 100px;height: 100%;box-shadow: 0 0 10px #29d, 0 0 5px #29d;opacity: 1.0;-webkit-transform: rotate(3deg) translate(0px, -4px);-moz-transform: rotate(3deg) translate(0px, -4px);-ms-transform: rotate(3deg) translate(0px, -4px);-o-transform: rotate(3deg) translate(0px, -4px);transform: rotate(3deg) translate(0px, -4px);}.pace .pace-activity {display: block;position: fixed;z-index: 2000;top: 15px;right: 15px;width: 14px;height: 14px;border: solid 2px transparent;border-top-color: #29d;border-left-color: #29d;border-radius: 10px;-webkit-animation: pace-spinner 400ms linear infinite;-moz-animation: pace-spinner 400ms linear infinite;-ms-animation: pace-spinner 400ms linear infinite;-o-animation: pace-spinner 400ms linear infinite;animation: pace-spinner 400ms linear infinite;}@-webkit-keyframes pace-spinner {0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}@-moz-keyframes pace-spinner {0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }}@-o-keyframes pace-spinner {0% { -o-transform: rotate(0deg); transform: rotate(0deg); }100% { -o-transform: rotate(360deg); transform: rotate(360deg); }}@-ms-keyframes pace-spinner {0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }}@keyframes pace-spinner {0% { transform: rotate(0deg); transform: rotate(0deg); }100% { transform: rotate(360deg); transform: rotate(360deg); }}]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>标签</title>
-      <link href="/tag/index.html"/>
-      <url>/tag/index.html</url>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1535,22 +1560,22 @@
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>友情链接</title>
+      <link href="/friend/index.html"/>
+      <url>/friend/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<blockquote><p>欢迎交换友链</p></blockquote>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title></title>
-      <link href="/css/flash.css"/>
-      <url>/css/flash.css</url>
+      <title>标签</title>
+      <link href="/tag/index.html"/>
+      <url>/tag/index.html</url>
       
-        <content type="html"><![CDATA[.pace {-webkit-pointer-events: none;pointer-events: none;-webkit-user-select: none;-moz-user-select: none;user-select: none;}.pace-inactive {display: none;}.pace .pace-progress {background: #29d;position: fixed;z-index: 2000;top: 0;right: 100%;width: 100%;height: 2px;}.pace .pace-progress-inner {display: block;position: absolute;right: 0px;width: 100px;height: 100%;box-shadow: 0 0 10px #29d, 0 0 5px #29d;opacity: 1.0;-webkit-transform: rotate(3deg) translate(0px, -4px);-moz-transform: rotate(3deg) translate(0px, -4px);-ms-transform: rotate(3deg) translate(0px, -4px);-o-transform: rotate(3deg) translate(0px, -4px);transform: rotate(3deg) translate(0px, -4px);}.pace .pace-activity {display: block;position: fixed;z-index: 2000;top: 15px;right: 15px;width: 14px;height: 14px;border: solid 2px transparent;border-top-color: #29d;border-left-color: #29d;border-radius: 10px;-webkit-animation: pace-spinner 400ms linear infinite;-moz-animation: pace-spinner 400ms linear infinite;-ms-animation: pace-spinner 400ms linear infinite;-o-animation: pace-spinner 400ms linear infinite;animation: pace-spinner 400ms linear infinite;}@-webkit-keyframes pace-spinner {0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}@-moz-keyframes pace-spinner {0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }}@-o-keyframes pace-spinner {0% { -o-transform: rotate(0deg); transform: rotate(0deg); }100% { -o-transform: rotate(360deg); transform: rotate(360deg); }}@-ms-keyframes pace-spinner {0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }}@keyframes pace-spinner {0% { transform: rotate(0deg); transform: rotate(0deg); }100% { transform: rotate(360deg); transform: rotate(360deg); }}]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     

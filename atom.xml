@@ -6,7 +6,7 @@
   <link href="https://blog.kahvia.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.kahvia.cn/"/>
-  <updated>2023-06-29T07:59:06.907Z</updated>
+  <updated>2023-07-04T13:58:56.460Z</updated>
   <id>https://blog.kahvia.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>响应式布局</title>
+    <link href="https://blog.kahvia.cn/2023/07/04/ResponsiveDesign.html"/>
+    <id>https://blog.kahvia.cn/2023/07/04/ResponsiveDesign.html</id>
+    <published>2023-07-04T11:58:41.653Z</published>
+    <updated>2023-07-04T13:58:56.460Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h3><p>响应式布局，是为五个不同的屏幕尺寸制定不同的显示比例。这是网页收缩导致网页布局变乱的究极解决方案。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;响应式布局&quot;&gt;&lt;a href=&quot;#响应式布局&quot; class=&quot;headerlink&quot; title=&quot;响应式布局&quot;&gt;&lt;/a&gt;响应式布局&lt;/h3&gt;&lt;p&gt;响应式布局，是为五个不同的屏幕尺寸制定不同的显示比例。这是网页收缩导致网页布局变乱的究极解决方案。&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="知识" scheme="https://blog.kahvia.cn/categories/%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="html element" scheme="https://blog.kahvia.cn/tags/html-element/"/>
+    
+  </entry>
   
   <entry>
     <title>Nodejs-包</title>
@@ -473,30 +498,6 @@
       
     <summary type="html">&lt;h3 id=&quot;Slidable&quot;&gt;&lt;a href=&quot;#Slidable&quot; class=&quot;headerlink&quot; title=&quot;Slidable&quot;&gt;&lt;/a&gt;Slidable&lt;/h3&gt;&lt;p&gt;滑动选项卡组件。&lt;/p&gt;
 &lt;h3 id=&quot;依赖引入&quot;&gt;&lt;a href=&quot;#依赖引入&quot; cla</summary>
-      
-    
-    
-    
-    <category term="知识" scheme="https://blog.kahvia.cn/categories/%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="Flutter" scheme="https://blog.kahvia.cn/tags/Flutter/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Flutter-CircularProgressIndicator</title>
-    <link href="https://blog.kahvia.cn/2022/10/20/FlutterCircularProgressIndicator.html"/>
-    <id>https://blog.kahvia.cn/2022/10/20/FlutterCircularProgressIndicator.html</id>
-    <published>2022-10-20T08:29:31.068Z</published>
-    <updated>2022-10-28T09:32:14.232Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="CircularProgressIndicator"><a href="#CircularProgressIndicator" class="headerlink" title="CircularProgressIndicator"></a>CircularProgressIndicator</h3><p>圆形的进度指示。可以用于等待加载的时候。</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>常配合 showDialog( ) 使用。</p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">showDialog(</span><br><span class="line">    context: context,</span><br><span class="line">    builder: (context)&#123;</span><br><span class="line">      <span class="keyword">return</span> Center(</span><br><span class="line">        child: CircularProgressIndicator(color: MyColors.rgbRed,),</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure><p>用完以后用 Navigator 回退页面就行了。</p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Navigator.of(context).pop();<span class="comment">//这样</span></span><br><span class="line">Navigator.pop(context);<span class="comment">//或这样</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;CircularProgressIndicator&quot;&gt;&lt;a href=&quot;#CircularProgressIndicator&quot; class=&quot;headerlink&quot; title=&quot;CircularProgressIndicator&quot;&gt;&lt;/a&gt;CircularPro</summary>
       
     
     
