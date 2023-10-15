@@ -6,7 +6,7 @@
   <link href="https://blog.kahvia.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.kahvia.cn/"/>
-  <updated>2023-07-04T13:58:56.460Z</updated>
+  <updated>2023-10-15T09:14:10.042Z</updated>
   <id>https://blog.kahvia.cn/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Clion中Cmake的设置问题</title>
+    <link href="https://blog.kahvia.cn/2023/10/15/Clion-cmake.html"/>
+    <id>https://blog.kahvia.cn/2023/10/15/Clion-cmake.html</id>
+    <published>2023-10-15T08:58:30.017Z</published>
+    <updated>2023-10-15T09:14:10.042Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-设置可执行程序输出目录"><a href="#1-设置可执行程序输出目录" class="headerlink" title="1.设置可执行程序输出目录"></a>1.设置可执行程序输出目录</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(CMAKE_RUNTIME_OUTPUT_DIRECTORY <span class="string">&quot;$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;/bin&quot;</span>)</span><br></pre></td></tr></table></figure><h3 id="2-将cpp文件添加为“生成可执行文件”的源文件"><a href="#2-将cpp文件添加为“生成可执行文件”的源文件" class="headerlink" title="2.将cpp文件添加为“生成可执行文件”的源文件"></a>2.将cpp文件添加为“生成可执行文件”的源文件</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(AcWing3375 Acwing/graduate/AcWing3375.cpp)</span><br></pre></td></tr></table></figure><h3 id="完整的cmake设置"><a href="#完整的cmake设置" class="headerlink" title="完整的cmake设置"></a>完整的cmake设置</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.24</span>)</span><br><span class="line"><span class="comment">#指定cmake工程名</span></span><br><span class="line"><span class="keyword">project</span>(algorithm)</span><br><span class="line"></span><br><span class="line"><span class="comment">#c++版本</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">14</span>)</span><br><span class="line"><span class="comment"># 指定可执行程序输出目录</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_RUNTIME_OUTPUT_DIRECTORY <span class="string">&quot;$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;/bin&quot;</span>)</span><br><span class="line"><span class="keyword">add_executable</span>(AcWing3375 Acwing/graduate/AcWing3375.cpp)</span><br></pre></td></tr></table></figure><h3 id="附：普通的gitignore文件"><a href="#附：普通的gitignore文件" class="headerlink" title="附：普通的gitignore文件"></a>附：普通的gitignore文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/.idea/</span><br><span class="line">/cmake-build-debug/</span><br><span class="line">/bin/</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1-设置可执行程序输出目录&quot;&gt;&lt;a href=&quot;#1-设置可执行程序输出目录&quot; class=&quot;headerlink&quot; title=&quot;1.设置可执行程序输出目录&quot;&gt;&lt;/a&gt;1.设置可执行程序输出目录&lt;/h3&gt;&lt;figure class=&quot;highlight cmak</summary>
+      
+    
+    
+    
+    <category term="知识" scheme="https://blog.kahvia.cn/categories/%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="clion cmake" scheme="https://blog.kahvia.cn/tags/clion-cmake/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue3使用Echarts</title>
+    <link href="https://blog.kahvia.cn/2023/07/19/vue3-echarts.html"/>
+    <id>https://blog.kahvia.cn/2023/07/19/vue3-echarts.html</id>
+    <published>2023-07-19T01:30:49.148Z</published>
+    <updated>2023-07-19T11:13:09.375Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>响应式布局，是为五个不同的屏幕尺寸制定不同的显示比例。这是网页收缩导致网页布局变乱的究极解决方案。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;响应式布局，是为五个不同的屏幕尺寸制定不同的显示比例。这是网页收缩导致网页布局变乱的究极解决方案。&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="知识" scheme="https://blog.kahvia.cn/categories/%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="echarts vue3" scheme="https://blog.kahvia.cn/tags/echarts-vue3/"/>
+    
+  </entry>
   
   <entry>
     <title>响应式布局</title>
@@ -449,55 +498,6 @@
       
       
     <summary type="html">&lt;h3 id=&quot;SmoothPageIndicator&quot;&gt;&lt;a href=&quot;#SmoothPageIndicator&quot; class=&quot;headerlink&quot; title=&quot;SmoothPageIndicator&quot;&gt;&lt;/a&gt;SmoothPageIndicator&lt;/h3&gt;&lt;p&gt;平滑</summary>
-      
-    
-    
-    
-    <category term="知识" scheme="https://blog.kahvia.cn/categories/%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="Flutter" scheme="https://blog.kahvia.cn/tags/Flutter/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Flutter-PercentIndicator</title>
-    <link href="https://blog.kahvia.cn/2022/10/26/FlutterPercentIndicator.html"/>
-    <id>https://blog.kahvia.cn/2022/10/26/FlutterPercentIndicator.html</id>
-    <published>2022-10-26T11:20:54.541Z</published>
-    <updated>2022-10-28T09:32:02.135Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="PercentIndicator"><a href="#PercentIndicator" class="headerlink" title="PercentIndicator"></a>PercentIndicator</h3><p>这是一个百分比指示器的组件，俗称进度条。是第三方组件，用以弥补官方的 CircularProgressIndicator 的不足。我曾想用官方的进度条组件包裹一个圆框，用以展示头像上传进度，然而官方的组件并不支持在圆环中间插入子组件，所以自己做的话，或许要用层叠布局，颇感麻烦。</p><p>但是今天偶然遇见这个第三方组件就解决了这个问题。</p><h3 id="依赖引入"><a href="#依赖引入" class="headerlink" title="依赖引入"></a>依赖引入</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">percent_indicator:</span> <span class="string">^4.0.1</span></span><br></pre></td></tr></table></figure><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProgressBarPageContent</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> ProgressBarPageContent(&#123;Key? key&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  State&lt;ProgressBarPageContent&gt; createState() =&gt; _ProgressBarPageContentState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_ProgressBarPageContentState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">ProgressBarPageContent</span>&gt; </span>&#123;</span><br><span class="line">  <span class="built_in">double</span> progress=<span class="number">0</span>;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Center(</span><br><span class="line">      child: Column(</span><br><span class="line">        mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">        children: [</span><br><span class="line">          CircularPercentIndicator(</span><br><span class="line">            <span class="comment">//开启过渡动画</span></span><br><span class="line">            animation: <span class="keyword">true</span>,</span><br><span class="line">            <span class="comment">//动画起点从上一次动画终点开始。默认从0开始。</span></span><br><span class="line">            animateFromLastPercent: <span class="keyword">true</span>,</span><br><span class="line">            <span class="comment">//圆环底色</span></span><br><span class="line">            backgroundColor: Colors.red[<span class="number">200</span>]!,</span><br><span class="line">            <span class="comment">//外圆半径</span></span><br><span class="line">            radius: <span class="number">150</span>,</span><br><span class="line">            <span class="comment">//圆环宽度</span></span><br><span class="line">            lineWidth: <span class="number">10</span>,</span><br><span class="line">            <span class="comment">//圆环线帽设置，也就是进度条的尾部，多出一部分用作线帽，线帽的形状</span></span><br><span class="line">            circularStrokeCap: CircularStrokeCap.round,</span><br><span class="line">            <span class="comment">//这里圆环中间可放置任意元素。</span></span><br><span class="line">            center: <span class="keyword">const</span> CircleAvatar(</span><br><span class="line">              backgroundImage: AssetImage(<span class="string">&quot;images/head/nilu.png&quot;</span>),</span><br><span class="line">              radius: <span class="number">140</span>,</span><br><span class="line">            ),</span><br><span class="line">            <span class="comment">//percent为进度</span></span><br><span class="line">            percent: progress</span><br><span class="line">          ),</span><br><span class="line">          <span class="keyword">const</span> SizedBox(height: <span class="number">10</span>,),</span><br><span class="line">          ElevatedButton(</span><br><span class="line">            style: ButtonStyle(</span><br><span class="line">              backgroundColor: MaterialStateProperty.all(Colors.redAccent)</span><br><span class="line">            ),</span><br><span class="line">            onPressed: ()&#123;</span><br><span class="line">              setState(() &#123;</span><br><span class="line">                <span class="keyword">if</span>(progress==<span class="number">1</span>) &#123;</span><br><span class="line">                  progress=<span class="number">0</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                  progress=<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;);</span><br><span class="line">            &#125;,</span><br><span class="line">            child: <span class="keyword">const</span> Text(<span class="string">&quot;Show Progress&quot;</span>)</span><br><span class="line">          )</span><br><span class="line">        ],</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h3><p><img src="https://pics.kahvia.cn/img/image-20221026192953616.png" alt="image-20221026192953616"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;PercentIndicator&quot;&gt;&lt;a href=&quot;#PercentIndicator&quot; class=&quot;headerlink&quot; title=&quot;PercentIndicator&quot;&gt;&lt;/a&gt;PercentIndicator&lt;/h3&gt;&lt;p&gt;这是一个百分比指示器的组件，</summary>
-      
-    
-    
-    
-    <category term="知识" scheme="https://blog.kahvia.cn/categories/%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="Flutter" scheme="https://blog.kahvia.cn/tags/Flutter/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Flutter-Slidable</title>
-    <link href="https://blog.kahvia.cn/2022/10/23/FlutterSlidable.html"/>
-    <id>https://blog.kahvia.cn/2022/10/23/FlutterSlidable.html</id>
-    <published>2022-10-23T09:57:18.396Z</published>
-    <updated>2022-10-28T10:35:10.469Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Slidable"><a href="#Slidable" class="headerlink" title="Slidable"></a>Slidable</h3><p>滑动选项卡组件。</p><h3 id="依赖引入"><a href="#依赖引入" class="headerlink" title="依赖引入"></a>依赖引入</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter_slidable: ^<span class="number">2.0</span><span class="number">.0</span></span><br></pre></td></tr></table></figure><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">Slidable(<span class="comment">//可滑动的组件</span></span><br><span class="line">  <span class="comment">//end代表从右边往左边滑动</span></span><br><span class="line">  endActionPane: ActionPane(<span class="comment">//滑动选项面板</span></span><br><span class="line">    motion: <span class="keyword">const</span> StretchMotion(),<span class="comment">//滑动动画</span></span><br><span class="line">    children: [</span><br><span class="line">      <span class="comment">//SlidableAction是单个滑动选项</span></span><br><span class="line">      SlidableAction(</span><br><span class="line">        onPressed: onDelete,<span class="comment">//触发删除的函数</span></span><br><span class="line">        icon: Icons.delete,<span class="comment">//图标</span></span><br><span class="line">        backgroundColor: Colors.redAccent,<span class="comment">//背景色</span></span><br><span class="line">        borderRadius: BorderRadius.circular(<span class="number">12</span>),<span class="comment">//圆角</span></span><br><span class="line">      )</span><br><span class="line">    ],</span><br><span class="line">  ),</span><br><span class="line">  child: Container(</span><br><span class="line">    padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">24</span>),</span><br><span class="line">    <span class="comment">// height: 60,</span></span><br><span class="line">    decoration:  BoxDecoration(</span><br><span class="line">        color: Colors.orange,</span><br><span class="line">        borderRadius: BorderRadius.circular(<span class="number">12</span>)</span><br><span class="line">    ),</span><br><span class="line">    child: Row(</span><br><span class="line">      children: [</span><br><span class="line">        Checkbox(</span><br><span class="line">          value: finished,</span><br><span class="line">          onChanged: onChanged,</span><br><span class="line">          activeColor: Colors.black,</span><br><span class="line">        ),</span><br><span class="line">        Text(</span><br><span class="line">          taskName,</span><br><span class="line">          style: TextStyle(decoration: finished?TextDecoration.lineThrough:TextDecoration.none),</span><br><span class="line">          overflow: TextOverflow.ellipsis,</span><br><span class="line">        )</span><br><span class="line">      ],</span><br><span class="line">    ),</span><br><span class="line">  ),</span><br><span class="line">)</span><br></pre></td></tr></table></figure><p> Navigator.of(context).pop();&#x2F;&#x2F;这样Navigator.pop(context);&#x2F;&#x2F;或这样dart</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Slidable&quot;&gt;&lt;a href=&quot;#Slidable&quot; class=&quot;headerlink&quot; title=&quot;Slidable&quot;&gt;&lt;/a&gt;Slidable&lt;/h3&gt;&lt;p&gt;滑动选项卡组件。&lt;/p&gt;
-&lt;h3 id=&quot;依赖引入&quot;&gt;&lt;a href=&quot;#依赖引入&quot; cla</summary>
       
     
     
