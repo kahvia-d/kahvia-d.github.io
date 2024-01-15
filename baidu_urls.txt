@@ -1,3 +1,4 @@
+https://blog.kahvia.cn/2024/01/15/AlgorithmAcBase1.html
 https://blog.kahvia.cn/2023/11/02/AlgorithmForGraduateTest.html
 https://blog.kahvia.cn/2023/10/15/Clion-cmake.html
 https://blog.kahvia.cn/2023/07/19/vue3-echarts.html
@@ -7,4 +8,3 @@ https://blog.kahvia.cn/2023/06/28/Javascript-DestructuringAssignment.html
 https://blog.kahvia.cn/2023/06/27/NodeJs.html
 https://blog.kahvia.cn/2023/05/04/AssemblyLanguageWorks.html
 https://blog.kahvia.cn/2023/04/18/HTML-Study.html
-https://blog.kahvia.cn/2023/03/14/FlutterAzList_fix.html
