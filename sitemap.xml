@@ -700,13 +700,6 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/clion-cmake/</loc>
-    <lastmod>2024-02-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.kahvia.cn/tags/AssemblyLanguage/</loc>
     <lastmod>2024-02-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -715,6 +708,13 @@
   
   <url>
     <loc>https://blog.kahvia.cn/tags/Python/</loc>
+    <lastmod>2024-02-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kahvia.cn/tags/clion-cmake/</loc>
     <lastmod>2024-02-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -749,14 +749,14 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/MicroService/</loc>
+    <loc>https://blog.kahvia.cn/tags/js/</loc>
     <lastmod>2024-02-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/js/</loc>
+    <loc>https://blog.kahvia.cn/tags/MicroService/</loc>
     <lastmod>2024-02-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
