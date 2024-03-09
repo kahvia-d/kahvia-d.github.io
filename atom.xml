@@ -6,7 +6,7 @@
   <link href="https://blog.kahvia.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.kahvia.cn/"/>
-  <updated>2024-03-07T09:02:09.613Z</updated>
+  <updated>2024-03-09T12:07:36.243Z</updated>
   <id>https://blog.kahvia.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue3知识点</title>
+    <link href="https://blog.kahvia.cn/2024/03/09/vue3Knowledge.html"/>
+    <id>https://blog.kahvia.cn/2024/03/09/vue3Knowledge.html</id>
+    <published>2024-03-09T10:28:17.575Z</published>
+    <updated>2024-03-09T12:07:36.243Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="样式穿透"><a href="#样式穿透" class="headerlink" title="样式穿透"></a>样式穿透</h3><p>使用样式穿透，可以穿透子组件影响到下面的类的样式，做到对第三方组件的样式自定义。</p><h4 id="采用-gt-gt-gt"><a href="#采用-gt-gt-gt" class="headerlink" title="采用&gt;&gt;&gt;"></a>采用&gt;&gt;&gt;</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uni-data-picker&gt;&gt;&gt;<span class="selector-class">.input-value-border</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="采用-x2F-deep-x2F"><a href="#采用-x2F-deep-x2F" class="headerlink" title="采用 &#x2F;deep&#x2F;"></a>采用 &#x2F;deep&#x2F;</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uni-data-picker /deep/ <span class="selector-class">.input-value-border</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="采用-v-deep"><a href="#采用-v-deep" class="headerlink" title="采用 ::v-deep"></a>采用 ::v-deep</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uni-data-picker::v-deep .input-value-border &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">3px</span> solid orange;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="父组件获取子组件属性"><a href="#父组件获取子组件属性" class="headerlink" title="父组件获取子组件属性"></a>父组件获取子组件属性</h3><p>根据<a href="https://cn.vuejs.org/api/sfc-script-setup.html#defineexpose">官方文档</a>，采用组合式 api 编写的组件，即 <script setup> 这样写的组件，内部定义的属性、方法，都是不对外开放的。可以调用 defineExpose() 方法，暴露需要的属性和方法。外部通过 ref 进行模板引用，即可访问暴露出来的属性和方法。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;uni-popup ref=&quot;popPage&quot; type=&quot;bottom&quot; background-color=&quot;#f7f7f7&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;boxBack&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">                &lt;input type=&quot;nickname&quot; placeholder=&quot;请输入分类名称&quot; v-model=&quot;catName&quot;&gt;</span><br><span class="line">                &lt;button ref=&quot;nickBtn&quot; @click=&quot;&quot;&gt;确认&lt;/button&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/uni-popup&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">const popPage = ref(null);</span><br><span class="line">const catName = ref(&quot;&quot;);</span><br><span class="line"></span><br><span class="line">function popUp() &#123;</span><br><span class="line">    console.log(popPage.value);</span><br><span class="line">    (popPage.value as any).open();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">defineExpose(&#123;</span><br><span class="line">    popUp</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 弹出层样式 --&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;样式穿透&quot;&gt;&lt;a href=&quot;#样式穿透&quot; class=&quot;headerlink&quot; title=&quot;样式穿透&quot;&gt;&lt;/a&gt;样式穿透&lt;/h3&gt;&lt;p&gt;使用样式穿透，可以穿透子组件影响到下面的类的样式，做到对第三方组件的样式自定义。&lt;/p&gt;
+&lt;h4 id=&quot;采用-gt-gt-</summary>
+      
+    
+    
+    
+    <category term="知识" scheme="https://blog.kahvia.cn/categories/%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="vue" scheme="https://blog.kahvia.cn/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>MemFireDb</title>
@@ -482,30 +507,6 @@
     
     
     <category term="Http" scheme="https://blog.kahvia.cn/tags/Http/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mysql-Uft8mb4</title>
-    <link href="https://blog.kahvia.cn/2022/11/29/MysqlUtf8mb4.html"/>
-    <id>https://blog.kahvia.cn/2022/11/29/MysqlUtf8mb4.html</id>
-    <published>2022-11-29T04:31:58.919Z</published>
-    <updated>2022-11-29T05:15:39.648Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在使用MySQL数据库存储数据的时候，意外发现不能存储Emoji表情😄。经过百度查证得知，mysql默认的 utf8 是三个字节的，存储不了四个字节的生僻字或者Emoji表情。需要换成支持四个字节的 utf8mb4 ，也就是UTF-8 most byte 4 。</p><h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 数据库更换字符集</span><br><span class="line">ALTER DATABASE AchatUserService CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;</span><br><span class="line"># 表更换字符集</span><br><span class="line">ALTER TABLE friendship CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</span><br><span class="line"># 需要改变的列进行更换字符集</span><br><span class="line">ALTER TABLE messages CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</span><br></pre></td></tr></table></figure><p>仅仅这样是不够的。在建立数据库连接的地方，还需要指定UTF-8字符集。比如在Spring boot项目的配置文件中，指定数据库连接的 url 处。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://localhost:3306/AchatUserService?serverTimezone=GMT%2B8&amp;characterEncoding=utf-8</span> <span class="comment"># here</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">password:</span> <span class="string">xxxx</span></span><br><span class="line">  <span class="attr">servlet:</span></span><br><span class="line">    <span class="attr">multipart:</span></span><br><span class="line">      <span class="attr">max-file-size:</span> <span class="string">100MB</span></span><br><span class="line">      <span class="attr">max-request-size:</span> <span class="string">500MB</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">39939</span></span><br></pre></td></tr></table></figure><p>不指定 utf-8 的话，估计默认是按照 utf8mb3 去连接的吧，这样是修改不了设置了 utf8mb4 字符集的数据的。（这可是重点所在）</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;在使用MySQL数据库存储数据的时候，意外发现不能存储Emoji表情😄。经过百度查证得知，mysql默认的 utf8 是三个字节的，存储不</summary>
-      
-    
-    
-    
-    <category term="知识" scheme="https://blog.kahvia.cn/categories/%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="Mysql" scheme="https://blog.kahvia.cn/tags/Mysql/"/>
     
   </entry>
   
