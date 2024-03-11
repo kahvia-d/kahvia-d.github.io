@@ -6,7 +6,7 @@
   <link href="https://blog.kahvia.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.kahvia.cn/"/>
-  <updated>2024-03-09T12:07:36.243Z</updated>
+  <updated>2024-03-11T11:35:48.420Z</updated>
   <id>https://blog.kahvia.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>项目过程中积累的css技巧</title>
+    <link href="https://blog.kahvia.cn/2024/03/11/css-skills.html"/>
+    <id>https://blog.kahvia.cn/2024/03/11/css-skills.html</id>
+    <published>2024-03-11T11:12:59.343Z</published>
+    <updated>2024-03-11T11:35:48.420Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Flex布局设置多行首对齐且整体居中"><a href="#Flex布局设置多行首对齐且整体居中" class="headerlink" title="Flex布局设置多行首对齐且整体居中"></a>Flex布局设置多行首对齐且整体居中</h3><p>假定项目中的待展示元素宽高固定，每一行要求左对齐，一行最多五个，在此基础上，依据设备的不同，每一行多余的屏幕空间不同。如何将每行排满后多余的屏幕空间分配给该行的每个元素？</p><p>答：采用一个空盒子对展示元素进行包裹。对于空盒子，采用<strong> flex-bias </strong>设置一行内所占空间为 20% ，同时空盒子也进行 flex 布局，对展示元素进行水平和垂直的居中处理。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div class=&quot;categories&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;wrapper&quot; v-for=&quot;category in categories&quot;&gt;</span><br><span class="line">            &lt;navigator class=&quot;navigator-item&quot; url=&quot;/pages/index/index&quot; open-type=&quot;navigate&quot;</span><br><span class="line">                hover-class=&quot;navigator-hover&quot;&gt;</span><br><span class="line">                &lt;image class=&quot;icon&quot; :src=&quot;category.icon_data&quot; /&gt;</span><br><span class="line">                &lt;text&gt;&#123;&#123; category.name &#125;&#125;&lt;/text&gt;</span><br><span class="line">            &lt;/navigator&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, onMounted &#125; from &#x27;vue&#x27;</span><br><span class="line">import &#123; getCats &#125; from &#x27;@/services/product&#x27;;</span><br><span class="line">import &#123; useProductStore &#125; from &#x27;@/stores/piniaStores&#x27;;</span><br><span class="line">import &#123; storeToRefs &#125; from &#x27;pinia&#x27;;</span><br><span class="line"></span><br><span class="line">const &#123; categories &#125; = storeToRefs(useProductStore());</span><br><span class="line"></span><br><span class="line">onMounted(() =&gt; &#123;</span><br><span class="line">    getCats();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.categories &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">    justify-content: flex-start;</span><br><span class="line">    margin-top: 10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.wrapper &#123;</span><br><span class="line">    flex-basis: 20%;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.navigator-item &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    margin-bottom: 25px;</span><br><span class="line">    background-color: #6196A6;</span><br><span class="line">    border-radius: 10px;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    align-items: center;</span><br><span class="line">    justify-content: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.navigator-item text &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    bottom: -20px;</span><br><span class="line">    font-size: x-small;</span><br><span class="line">    font-weight: 500;</span><br><span class="line">    color: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">image &#123;</span><br><span class="line">    width: 30px;</span><br><span class="line">    height: 30px;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure><p><img src="https://pics.kahvia.cn/img/20240311193512.png" alt="效果图"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Flex布局设置多行首对齐且整体居中&quot;&gt;&lt;a href=&quot;#Flex布局设置多行首对齐且整体居中&quot; class=&quot;headerlink&quot; title=&quot;Flex布局设置多行首对齐且整体居中&quot;&gt;&lt;/a&gt;Flex布局设置多行首对齐且整体居中&lt;/h3&gt;&lt;p&gt;假定项目中的</summary>
+      
+    
+    
+    
+    <category term="经验" scheme="https://blog.kahvia.cn/categories/%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+    <category term="css" scheme="https://blog.kahvia.cn/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>vue3知识点</title>
@@ -483,30 +507,6 @@
     
     
     <category term="Android" scheme="https://blog.kahvia.cn/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MixContent</title>
-    <link href="https://blog.kahvia.cn/2022/12/15/HttpMixContent.html"/>
-    <id>https://blog.kahvia.cn/2022/12/15/HttpMixContent.html</id>
-    <published>2022-12-15T05:41:40.429Z</published>
-    <updated>2022-12-15T06:15:08.087Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="问题发生场景"><a href="#问题发生场景" class="headerlink" title="问题发生场景"></a>问题发生场景</h3><p>在本地测试前后端项目的时候一切正常。当我将前端项目和后端项目打包并部署到服务器后，前端项目无法正常访问后端接口。浏览器控制台报错为“已阻止混合内容”，即mix content。</p><p>经过百度得知，mix content 常在 https 页面访问 http 接口时发生。</p><p>由于我的服务器上的tomcat之前就已经配置过SSL证书，所以部署在那个 tomcat 中的项目资源都会以https的方式访问。但是我这个后端项目是spring boot项目，使用的是内置的tomcat，所以直接部署后启动的是 http 服务。我 https 的页面访问了我 http 的接口，就产生了错误。</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ol><li>去除服务器上 tomcat 的SSL配置。（不合适）</li><li>为后端spring boot项目配置SSL证书。（目前适用于我）</li></ol><h3 id="方案实施"><a href="#方案实施" class="headerlink" title="方案实施"></a>方案实施</h3><ol><li>下载自己的SSL证书，将 jks 后缀的文件放在项目的 resource 目录下。</li><li>完善项目的配置文件，我这里用的是 yml 配置文件。</li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="string">xxxxx</span></span><br><span class="line">  <span class="attr">ssl:</span></span><br><span class="line">    <span class="attr">key-store:</span> <span class="string">classpath:www.kahvia.cn.jks</span></span><br><span class="line">    <span class="attr">key-store-type:</span> <span class="string">JKS</span> <span class="comment">#证书文件类型</span></span><br><span class="line">    <span class="attr">key-store-password:</span> <span class="string">xxxxxxxx</span> <span class="comment">#证书下载时包含的密码</span></span><br></pre></td></tr></table></figure><h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><ul><li>Mix Content 的错误不会在 http 页面请求 https 接口的时候发生。也就是说，当我为spring boot配置SSL证书后，本地项目仍然可以正常访问已经部署的后端项目。</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;问题发生场景&quot;&gt;&lt;a href=&quot;#问题发生场景&quot; class=&quot;headerlink&quot; title=&quot;问题发生场景&quot;&gt;&lt;/a&gt;问题发生场景&lt;/h3&gt;&lt;p&gt;在本地测试前后端项目的时候一切正常。当我将前端项目和后端项目打包并部署到服务器后，前端项目无法正常访问后端接</summary>
-      
-    
-    
-    
-    <category term="小问题" scheme="https://blog.kahvia.cn/categories/%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
-    
-    
-    <category term="Http" scheme="https://blog.kahvia.cn/tags/Http/"/>
     
   </entry>
   
