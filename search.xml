@@ -33,7 +33,7 @@
       <link href="/2024/03/09/vue3Knowledge.html"/>
       <url>/2024/03/09/vue3Knowledge.html</url>
       
-        <content type="html"><![CDATA[<h3 id="样式穿透"><a href="#样式穿透" class="headerlink" title="样式穿透"></a>样式穿透</h3><p>使用样式穿透，可以穿透子组件影响到下面的类的样式，做到对第三方组件的样式自定义。</p><h4 id="采用-gt-gt-gt"><a href="#采用-gt-gt-gt" class="headerlink" title="采用&gt;&gt;&gt;"></a>采用&gt;&gt;&gt;</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uni-data-picker&gt;&gt;&gt;<span class="selector-class">.input-value-border</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="采用-x2F-deep-x2F"><a href="#采用-x2F-deep-x2F" class="headerlink" title="采用 &#x2F;deep&#x2F;"></a>采用 &#x2F;deep&#x2F;</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uni-data-picker /deep/ <span class="selector-class">.input-value-border</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="采用-v-deep"><a href="#采用-v-deep" class="headerlink" title="采用 ::v-deep"></a>采用 ::v-deep</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uni-data-picker::v-deep .input-value-border &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">3px</span> solid orange;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="父组件获取子组件属性"><a href="#父组件获取子组件属性" class="headerlink" title="父组件获取子组件属性"></a>父组件获取子组件属性</h3><p>根据<a href="https://cn.vuejs.org/api/sfc-script-setup.html#defineexpose">官方文档</a>，采用组合式 api 编写的组件，即 <script setup> 这样写的组件，内部定义的属性、方法，都是不对外开放的。可以调用 defineExpose() 方法，暴露需要的属性和方法。外部通过 ref 进行模板引用，即可访问暴露出来的属性和方法。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;uni-popup ref=&quot;popPage&quot; type=&quot;bottom&quot; background-color=&quot;#f7f7f7&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;boxBack&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">                &lt;input type=&quot;nickname&quot; placeholder=&quot;请输入分类名称&quot; v-model=&quot;catName&quot;&gt;</span><br><span class="line">                &lt;button ref=&quot;nickBtn&quot; @click=&quot;&quot;&gt;确认&lt;/button&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/uni-popup&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">const popPage = ref(null);</span><br><span class="line">const catName = ref(&quot;&quot;);</span><br><span class="line"></span><br><span class="line">function popUp() &#123;</span><br><span class="line">    console.log(popPage.value);</span><br><span class="line">    (popPage.value as any).open();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">defineExpose(&#123;</span><br><span class="line">    popUp</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 弹出层样式 --&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h3 id="样式穿透"><a href="#样式穿透" class="headerlink" title="样式穿透"></a>样式穿透</h3><p>使用样式穿透，可以穿透子组件影响到下面的类的样式，做到对第三方组件的样式自定义。</p><h4 id="采用-gt-gt-gt"><a href="#采用-gt-gt-gt" class="headerlink" title="采用&gt;&gt;&gt;"></a>采用&gt;&gt;&gt;</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uni-data-picker&gt;&gt;&gt;<span class="selector-class">.input-value-border</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="采用-x2F-deep-x2F"><a href="#采用-x2F-deep-x2F" class="headerlink" title="采用 &#x2F;deep&#x2F;"></a>采用 &#x2F;deep&#x2F;</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uni-data-picker /deep/ <span class="selector-class">.input-value-border</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="采用-v-deep"><a href="#采用-v-deep" class="headerlink" title="采用 ::v-deep"></a>采用 ::v-deep</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uni-data-picker::v-deep .input-value-border &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">3px</span> solid orange;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="父组件获取子组件属性"><a href="#父组件获取子组件属性" class="headerlink" title="父组件获取子组件属性"></a>父组件获取子组件属性</h3><p>根据<a href="https://cn.vuejs.org/api/sfc-script-setup.html#defineexpose">官方文档</a>，采用组合式 api 编写的组件，即 <script setup> 这样写的组件，内部定义的属性、方法，都是不对外开放的。可以调用 defineExpose() 方法，暴露需要的属性和方法。外部通过 ref 进行模板引用，即可访问暴露出来的属性和方法。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;uni-popup ref=&quot;popPage&quot; type=&quot;bottom&quot; background-color=&quot;#f7f7f7&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;boxBack&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">                &lt;input type=&quot;nickname&quot; placeholder=&quot;请输入分类名称&quot; v-model=&quot;catName&quot;&gt;</span><br><span class="line">                &lt;button ref=&quot;nickBtn&quot; @click=&quot;&quot;&gt;确认&lt;/button&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/uni-popup&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">const popPage = ref(null);</span><br><span class="line">const catName = ref(&quot;&quot;);</span><br><span class="line"></span><br><span class="line">function popUp() &#123;</span><br><span class="line">    console.log(popPage.value);</span><br><span class="line">    (popPage.value as any).open();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">defineExpose(&#123;</span><br><span class="line">    popUp</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 弹出层样式 --&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure><h3 id="props设置默认值"><a href="#props设置默认值" class="headerlink" title="props设置默认值"></a>props设置默认值</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Boolean 类型的未传递 prop 将被转换为 false。————官方文档</span></span><br><span class="line"><span class="keyword">let</span> props = <span class="title function_">defineProps</span>(&#123;</span><br><span class="line">    <span class="attr">title</span>: <span class="title class_">String</span>,</span><br><span class="line">    <span class="attr">showBack</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="title class_">Boolean</span>,</span><br><span class="line">        <span class="attr">default</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h3 id="watch-props的值"><a href="#watch-props的值" class="headerlink" title="watch props的值"></a>watch props的值</h3><p>要使用 getter 函数。此处的 props.catName 是一个外部传入常量，如果给 watch 这个东西，那么 watch 调用，生成监视的时候，收到的参数是一个常量，这不对。要给 watch 一个getter 函数，让它自己调用函数去看，这样监视器看到返回值跟之前不一样了，才知道发生了变化。</p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">watch</span>(<span class="function">() =&gt;</span> props.<span class="property">catName</span>, <span class="keyword">async</span> (oldCatName, newCatName) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> ((productsMap.<span class="property">value</span> <span class="keyword">as</span> <span class="built_in">any</span>)[props.<span class="property">catName</span>].<span class="property">length</span> == <span class="number">0</span>)</span><br><span class="line">        <span class="title function_">getProsByCatName</span>();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><blockquote><p><a href="https://cn.vuejs.org/guide/essentials/watchers.html#watch-source-types">侦听器 | Vue.js (vuejs.org)</a></p></blockquote>]]></content>
       
       
       <categories>
@@ -1744,39 +1744,6 @@
     
     
     <entry>
-      <title>赞赏</title>
-      <link href="/donate/index.html"/>
-      <url>/donate/index.html</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>如果喜欢我的博客，或者喜欢我的博客主题，可以考虑赞赏一下哦，非常感激！<br>网站所需的服务器和 CDN 都是不小的开支，日常维护也需要大量精力。 <br>你们的支持是我前进的最大动力！</p></blockquote>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>分类</title>
-      <link href="/category/index.html"/>
-      <url>/category/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>友情链接</title>
-      <link href="/friend/index.html"/>
-      <url>/friend/index.html</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>欢迎交换友链</p></blockquote>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title></title>
       <link href="/css/custom.css"/>
       <url>/css/custom.css</url>
@@ -1788,11 +1755,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/flash.css"/>
-      <url>/css/flash.css</url>
+      <title>赞赏</title>
+      <link href="/donate/index.html"/>
+      <url>/donate/index.html</url>
       
-        <content type="html"><![CDATA[.pace {-webkit-pointer-events: none;pointer-events: none;-webkit-user-select: none;-moz-user-select: none;user-select: none;}.pace-inactive {display: none;}.pace .pace-progress {background: #29d;position: fixed;z-index: 2000;top: 0;right: 100%;width: 100%;height: 2px;}.pace .pace-progress-inner {display: block;position: absolute;right: 0px;width: 100px;height: 100%;box-shadow: 0 0 10px #29d, 0 0 5px #29d;opacity: 1.0;-webkit-transform: rotate(3deg) translate(0px, -4px);-moz-transform: rotate(3deg) translate(0px, -4px);-ms-transform: rotate(3deg) translate(0px, -4px);-o-transform: rotate(3deg) translate(0px, -4px);transform: rotate(3deg) translate(0px, -4px);}.pace .pace-activity {display: block;position: fixed;z-index: 2000;top: 15px;right: 15px;width: 14px;height: 14px;border: solid 2px transparent;border-top-color: #29d;border-left-color: #29d;border-radius: 10px;-webkit-animation: pace-spinner 400ms linear infinite;-moz-animation: pace-spinner 400ms linear infinite;-ms-animation: pace-spinner 400ms linear infinite;-o-animation: pace-spinner 400ms linear infinite;animation: pace-spinner 400ms linear infinite;}@-webkit-keyframes pace-spinner {0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}@-moz-keyframes pace-spinner {0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }}@-o-keyframes pace-spinner {0% { -o-transform: rotate(0deg); transform: rotate(0deg); }100% { -o-transform: rotate(360deg); transform: rotate(360deg); }}@-ms-keyframes pace-spinner {0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }}@keyframes pace-spinner {0% { transform: rotate(0deg); transform: rotate(0deg); }100% { transform: rotate(360deg); transform: rotate(360deg); }}]]></content>
+        <content type="html"><![CDATA[<blockquote><p>如果喜欢我的博客，或者喜欢我的博客主题，可以考虑赞赏一下哦，非常感激！<br>网站所需的服务器和 CDN 都是不小的开支，日常维护也需要大量精力。 <br>你们的支持是我前进的最大动力！</p></blockquote>]]></content>
       
     </entry>
     
@@ -1821,9 +1788,42 @@
     
     
     <entry>
+      <title></title>
+      <link href="/css/flash.css"/>
+      <url>/css/flash.css</url>
+      
+        <content type="html"><![CDATA[.pace {-webkit-pointer-events: none;pointer-events: none;-webkit-user-select: none;-moz-user-select: none;user-select: none;}.pace-inactive {display: none;}.pace .pace-progress {background: #29d;position: fixed;z-index: 2000;top: 0;right: 100%;width: 100%;height: 2px;}.pace .pace-progress-inner {display: block;position: absolute;right: 0px;width: 100px;height: 100%;box-shadow: 0 0 10px #29d, 0 0 5px #29d;opacity: 1.0;-webkit-transform: rotate(3deg) translate(0px, -4px);-moz-transform: rotate(3deg) translate(0px, -4px);-ms-transform: rotate(3deg) translate(0px, -4px);-o-transform: rotate(3deg) translate(0px, -4px);transform: rotate(3deg) translate(0px, -4px);}.pace .pace-activity {display: block;position: fixed;z-index: 2000;top: 15px;right: 15px;width: 14px;height: 14px;border: solid 2px transparent;border-top-color: #29d;border-left-color: #29d;border-radius: 10px;-webkit-animation: pace-spinner 400ms linear infinite;-moz-animation: pace-spinner 400ms linear infinite;-ms-animation: pace-spinner 400ms linear infinite;-o-animation: pace-spinner 400ms linear infinite;animation: pace-spinner 400ms linear infinite;}@-webkit-keyframes pace-spinner {0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}@-moz-keyframes pace-spinner {0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }}@-o-keyframes pace-spinner {0% { -o-transform: rotate(0deg); transform: rotate(0deg); }100% { -o-transform: rotate(360deg); transform: rotate(360deg); }}@-ms-keyframes pace-spinner {0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }}@keyframes pace-spinner {0% { transform: rotate(0deg); transform: rotate(0deg); }100% { transform: rotate(360deg); transform: rotate(360deg); }}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>友情链接</title>
+      <link href="/friend/index.html"/>
+      <url>/friend/index.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>欢迎交换友链</p></blockquote>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>标签</title>
       <link href="/tag/index.html"/>
       <url>/tag/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>分类</title>
+      <link href="/category/index.html"/>
+      <url>/category/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
