@@ -1747,22 +1747,22 @@
     
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[<h1 id="Hello-It’s-Kahvia"><a href="#Hello-It’s-Kahvia" class="headerlink" title="Hello, It’s Kahvia ."></a>Hello, It’s <a href="#">Kahvia</a> .</h1><hr><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>Kahvia。</p><blockquote><p><strong>不骄不躁，努力生活。</strong></p></blockquote><h3 id="Now"><a href="#Now" class="headerlink" title="Now"></a>Now</h3><p>Tring to improve myself, struggling for the future life.</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="Hello-It’s-Kahvia"><a href="#Hello-It’s-Kahvia" class="headerlink" title="Hello, It’s Kahvia ."></a>Hello, It’s <a href="#">Kahvia</a> .</h1><hr><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>Kahvia。</p><blockquote><p><strong>不骄不躁，努力生活。</strong></p></blockquote><h3 id="Now"><a href="#Now" class="headerlink" title="Now"></a>Now</h3><p>Tring to improve myself, struggling for the future life.</p>]]></content>
       
     </entry>
     
@@ -1780,9 +1780,9 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/category/index.html"/>
-      <url>/category/index.html</url>
+      <title>留言板</title>
+      <link href="/comment/index.html"/>
+      <url>/comment/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1802,6 +1802,17 @@
     
     
     <entry>
+      <title>分类</title>
+      <link href="/category/index.html"/>
+      <url>/category/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>赞赏</title>
       <link href="/donate/index.html"/>
       <url>/donate/index.html</url>
@@ -1813,9 +1824,9 @@
     
     
     <entry>
-      <title>留言板</title>
-      <link href="/comment/index.html"/>
-      <url>/comment/index.html</url>
+      <title>标签</title>
+      <link href="/tag/index.html"/>
+      <url>/tag/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1838,17 +1849,6 @@
       <title>link</title>
       <link href="/link/index.html"/>
       <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>标签</title>
-      <link href="/tag/index.html"/>
-      <url>/tag/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
