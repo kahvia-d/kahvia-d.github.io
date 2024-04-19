@@ -1,3 +1,4 @@
+https://blog.kahvia.cn/2024/04/19/DaisyUI.html
 https://blog.kahvia.cn/2024/03/16/Vue-use.html
 https://blog.kahvia.cn/2024/03/11/css-skills.html
 https://blog.kahvia.cn/2024/03/09/vue3Knowledge.html
@@ -7,4 +8,3 @@ https://blog.kahvia.cn/2024/02/29/Uniapp.html
 https://blog.kahvia.cn/2024/02/04/NpmMirrorManage.html
 https://blog.kahvia.cn/2024/01/15/AlgorithmAcBase1.html
 https://blog.kahvia.cn/2023/11/02/AlgorithmForGraduateTest.html
-https://blog.kahvia.cn/2023/10/15/Clion-cmake.html
