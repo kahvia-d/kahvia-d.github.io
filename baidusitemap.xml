@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blog.kahvia.cn/2024/04/19/DaisyUI.html</loc>
-    <lastmod>2024-04-19</lastmod>
+    <lastmod>2024-04-21</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.kahvia.cn/2024/03/11/css-skills.html</loc>
+    <lastmod>2024-04-21</lastmod>
   </url>
   <url>
     <loc>https://blog.kahvia.cn/2024/02/29/Uniapp.html</loc>
@@ -15,10 +19,6 @@
   <url>
     <loc>https://blog.kahvia.cn/2024/03/16/Vue-use.html</loc>
     <lastmod>2024-03-16</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.kahvia.cn/2024/03/11/css-skills.html</loc>
-    <lastmod>2024-03-11</lastmod>
   </url>
   <url>
     <loc>https://blog.kahvia.cn/2024/02/29/TypeScript.html</loc>
