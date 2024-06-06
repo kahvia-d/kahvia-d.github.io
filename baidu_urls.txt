@@ -1,3 +1,4 @@
+https://blog.kahvia.cn/2024/06/05/Anaconda.html
 https://blog.kahvia.cn/2024/06/02/SshProblems.html
 https://blog.kahvia.cn/2024/04/19/DaisyUI.html
 https://blog.kahvia.cn/2024/03/16/Vue-use.html
@@ -7,4 +8,3 @@ https://blog.kahvia.cn/2024/03/06/MemFireDb.html
 https://blog.kahvia.cn/2024/02/29/TypeScript.html
 https://blog.kahvia.cn/2024/02/29/Uniapp.html
 https://blog.kahvia.cn/2024/02/04/NpmMirrorManage.html
-https://blog.kahvia.cn/2024/01/15/AlgorithmAcBase1.html

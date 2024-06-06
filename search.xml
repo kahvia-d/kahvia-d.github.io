@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Anaconda</title>
+      <link href="/2024/06/05/Anaconda.html"/>
+      <url>/2024/06/05/Anaconda.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="删除conda源"><a href="#删除conda源" class="headerlink" title="删除conda源"></a>删除conda源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --remove-key channels</span><br></pre></td></tr></table></figure><h3 id="conda配置"><a href="#conda配置" class="headerlink" title="conda配置"></a>conda配置</h3><p><a href="https://mirrors4.tuna.tsinghua.edu.cn/help/anaconda/">anaconda | 镜像站使用帮助 | 清华大学开源软件镜像站</a></p><p>修改<code>C:\Users\用户名\.condarc</code>文件内容为下面内容。其中envs_dirs是指定conda环境的安装位置。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: <span class="literal">true</span></span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/</span><br><span class="line">envs_dirs:</span><br><span class="line">  - D://Anaconda//envs</span><br><span class="line">  </span><br></pre></td></tr></table></figure><p>通过<code>conda info</code>查看conda信息。看到D:\Anaconda\envs在envs directories的第一位，就代表虚拟环境默认安装位置设置好了。通过channel URLs也可以看见清华镜像源也设置好了。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">(adong) PS C:\WINDOWS\system32&gt; conda info</span><br><span class="line"></span><br><span class="line">     active environment : adong</span><br><span class="line">    active <span class="built_in">env</span> location : D:\Anaconda\envs\adong</span><br><span class="line">            shell level : 2</span><br><span class="line">       user config file : C:\Users\91430\.condarc</span><br><span class="line"> populated config files : C:\Users\91430\.condarc</span><br><span class="line">          conda version : 24.1.2</span><br><span class="line">    conda-build version : 24.1.2</span><br><span class="line">         python version : 3.11.7.final.0</span><br><span class="line">                 solver : libmamba (default)</span><br><span class="line">       virtual packages : __archspec=1=x86_64</span><br><span class="line">                          __conda=24.1.2=0</span><br><span class="line">                          __cuda=12.3=0</span><br><span class="line">                          __win=0=0</span><br><span class="line">       base environment : D:\Anaconda  (writable)</span><br><span class="line">      conda av data <span class="built_in">dir</span> : D:\Anaconda\etc\conda</span><br><span class="line">  conda av metadata url : None</span><br><span class="line">           channel URLs : https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/win-64</span><br><span class="line">                          https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/noarch</span><br><span class="line">                          https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r/win-64</span><br><span class="line">                          https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r/noarch</span><br><span class="line">                          https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2/win-64</span><br><span class="line">                          https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2/noarch</span><br><span class="line">          package cache : D:\Anaconda\pkgs</span><br><span class="line">                          C:\Users\91430\.conda\pkgs</span><br><span class="line">                          C:\Users\91430\AppData\Local\conda\conda\pkgs</span><br><span class="line">       envs directories : D:\Anaconda\envs</span><br><span class="line">                          C:\Users\91430\.conda\envs</span><br><span class="line">                          C:\Users\91430\AppData\Local\conda\conda\envs</span><br><span class="line">               platform : win-64</span><br><span class="line">             user-agent : conda/24.1.2 requests/2.31.0 CPython/3.11.7 Windows/10 Windows/10.0.22000 solver/libmamba conda-libmamba-solver/24.1.0 libmambapy/1.5.6 aau/0.4.3 c/2cby9s0faIgGPUHiAZNUZA s/l8VpJfZM5eNDkpX7Ia9NMQ e/678Mj-yGtTUNyUgyuxwmKw</span><br><span class="line">          administrator : True</span><br><span class="line">             netrc file : None</span><br><span class="line">           offline mode : False</span><br></pre></td></tr></table></figure><h3 id="吴恩达机器学习Optional-Labs环境配置"><a href="#吴恩达机器学习Optional-Labs环境配置" class="headerlink" title="吴恩达机器学习Optional Labs环境配置"></a>吴恩达机器学习Optional Labs环境配置</h3><p>采用的是JupyterNotebook、JupyterLab，以及lab的一些插件。</p><p>由于安装的anaconda的base环境自带一套Jupyter，在Jupyter以及lab插件的版本上，或许存在兼容问题，比如我在base环境下查看拓展。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(base) C:\Users\91430&gt;jupyter labextension list</span><br><span class="line">JupyterLab v4.0.13</span><br><span class="line">D:\Anaconda\share\jupyter\labextensions</span><br><span class="line">        jupyter-matplotlib v0.11.4 enabled ok</span><br><span class="line">        jupyterlab-plotly v5.15.0 enabled  X</span><br><span class="line">        @jupyter-notebook/lab-extension v7.0.8 enabled ok</span><br><span class="line">        @jupyter-widgets/jupyterlab-manager v5.0.11 enabled ok (python, jupyterlab_widgets)</span><br><span class="line">        @lckr/jupyterlab_variableinspector v3.1.0 enabled ok (python, lckr_jupyterlab_variableinspector)</span><br><span class="line">        @pyviz/jupyterlab_pyviz v3.0.0 enabled ok</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   The following extensions are outdated:</span><br><span class="line">        jupyterlab-plotly</span><br><span class="line"></span><br><span class="line">   Consider checking <span class="keyword">if</span> an update is available <span class="keyword">for</span> these packages.</span><br></pre></td></tr></table></figure><p>可以看到 plotly 的版本是有问题的。刚安装anaconda的时候，Lab的版本和plotly的版本比现在还高，后来，我参考了<a href="https://github.com/jupyterlab/jupyterlab/issues/14590">这个Issue</a>，将 Lab 和 plotly 进行降级，期望能兼容，然而并没有，结果如上所示。</p><p>所以我新建了一个conda环境<code>conda create -n adong python=3.7</code>，其中n代表name，adong则是我取的环境名，后面可以接环境要安装的包，这里安装的python3.7。</p><p>安装完成后，通过<code>conda activate adong</code>切换到新环境，输入<code>conda install &quot;jupyterlab&gt;=3&quot; &quot;ipywidgets&gt;=7.6&quot;</code>安装 jupyterlab 和插件ipywidgets。此后，缺啥装啥就行了，通过<code>conda install xxx</code>进行安装即可。</p><p>有一些必要的，比如<code>numpy matplotlib ipympl</code>。安装完成后，在该环境下通过输入命令<code>jupyter notebook</code>，即可正常使用相关功能，效果如下所示。</p><p><img src="https://pics.kahvia.cn/img/jupyterlab%E5%B1%95%E7%A4%BA.gif" alt="效果展示"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Anaconda </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SSH连接问题</title>
       <link href="/2024/06/02/SshProblems.html"/>
       <url>/2024/06/02/SshProblems.html</url>
@@ -1808,20 +1833,9 @@
     
     
     <entry>
-      <title>赞赏</title>
-      <link href="/donate/index.html"/>
-      <url>/donate/index.html</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>如果喜欢我的博客，或者喜欢我的博客主题，可以考虑赞赏一下哦，非常感激！<br>网站所需的服务器和 CDN 都是不小的开支，日常维护也需要大量精力。 <br>你们的支持是我前进的最大动力！</p></blockquote>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>留言板</title>
-      <link href="/comment/index.html"/>
-      <url>/comment/index.html</url>
+      <title>分类</title>
+      <link href="/category/index.html"/>
+      <url>/category/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1841,31 +1855,20 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/flash.css"/>
-      <url>/css/flash.css</url>
+      <title>赞赏</title>
+      <link href="/donate/index.html"/>
+      <url>/donate/index.html</url>
       
-        <content type="html"><![CDATA[.pace {-webkit-pointer-events: none;pointer-events: none;-webkit-user-select: none;-moz-user-select: none;user-select: none;}.pace-inactive {display: none;}.pace .pace-progress {background: #29d;position: fixed;z-index: 2000;top: 0;right: 100%;width: 100%;height: 2px;}.pace .pace-progress-inner {display: block;position: absolute;right: 0px;width: 100px;height: 100%;box-shadow: 0 0 10px #29d, 0 0 5px #29d;opacity: 1.0;-webkit-transform: rotate(3deg) translate(0px, -4px);-moz-transform: rotate(3deg) translate(0px, -4px);-ms-transform: rotate(3deg) translate(0px, -4px);-o-transform: rotate(3deg) translate(0px, -4px);transform: rotate(3deg) translate(0px, -4px);}.pace .pace-activity {display: block;position: fixed;z-index: 2000;top: 15px;right: 15px;width: 14px;height: 14px;border: solid 2px transparent;border-top-color: #29d;border-left-color: #29d;border-radius: 10px;-webkit-animation: pace-spinner 400ms linear infinite;-moz-animation: pace-spinner 400ms linear infinite;-ms-animation: pace-spinner 400ms linear infinite;-o-animation: pace-spinner 400ms linear infinite;animation: pace-spinner 400ms linear infinite;}@-webkit-keyframes pace-spinner {0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}@-moz-keyframes pace-spinner {0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }}@-o-keyframes pace-spinner {0% { -o-transform: rotate(0deg); transform: rotate(0deg); }100% { -o-transform: rotate(360deg); transform: rotate(360deg); }}@-ms-keyframes pace-spinner {0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }}@keyframes pace-spinner {0% { transform: rotate(0deg); transform: rotate(0deg); }100% { transform: rotate(360deg); transform: rotate(360deg); }}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>分类</title>
-      <link href="/category/index.html"/>
-      <url>/category/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<blockquote><p>如果喜欢我的博客，或者喜欢我的博客主题，可以考虑赞赏一下哦，非常感激！<br>网站所需的服务器和 CDN 都是不小的开支，日常维护也需要大量精力。 <br>你们的支持是我前进的最大动力！</p></blockquote>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1885,9 +1888,31 @@
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>留言板</title>
+      <link href="/comment/index.html"/>
+      <url>/comment/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/flash.css"/>
+      <url>/css/flash.css</url>
+      
+        <content type="html"><![CDATA[.pace {-webkit-pointer-events: none;pointer-events: none;-webkit-user-select: none;-moz-user-select: none;user-select: none;}.pace-inactive {display: none;}.pace .pace-progress {background: #29d;position: fixed;z-index: 2000;top: 0;right: 100%;width: 100%;height: 2px;}.pace .pace-progress-inner {display: block;position: absolute;right: 0px;width: 100px;height: 100%;box-shadow: 0 0 10px #29d, 0 0 5px #29d;opacity: 1.0;-webkit-transform: rotate(3deg) translate(0px, -4px);-moz-transform: rotate(3deg) translate(0px, -4px);-ms-transform: rotate(3deg) translate(0px, -4px);-o-transform: rotate(3deg) translate(0px, -4px);transform: rotate(3deg) translate(0px, -4px);}.pace .pace-activity {display: block;position: fixed;z-index: 2000;top: 15px;right: 15px;width: 14px;height: 14px;border: solid 2px transparent;border-top-color: #29d;border-left-color: #29d;border-radius: 10px;-webkit-animation: pace-spinner 400ms linear infinite;-moz-animation: pace-spinner 400ms linear infinite;-ms-animation: pace-spinner 400ms linear infinite;-o-animation: pace-spinner 400ms linear infinite;animation: pace-spinner 400ms linear infinite;}@-webkit-keyframes pace-spinner {0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}@-moz-keyframes pace-spinner {0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }}@-o-keyframes pace-spinner {0% { -o-transform: rotate(0deg); transform: rotate(0deg); }100% { -o-transform: rotate(360deg); transform: rotate(360deg); }}@-ms-keyframes pace-spinner {0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }}@keyframes pace-spinner {0% { transform: rotate(0deg); transform: rotate(0deg); }100% { transform: rotate(360deg); transform: rotate(360deg); }}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
