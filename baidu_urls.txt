@@ -1,3 +1,5 @@
+https://blog.kahvia.cn/2024/06/21/LaTeX.html
+https://blog.kahvia.cn/2024/06/21/MachineLearning.html
 https://blog.kahvia.cn/2024/06/05/Anaconda.html
 https://blog.kahvia.cn/2024/06/02/SshProblems.html
 https://blog.kahvia.cn/2024/04/19/DaisyUI.html
@@ -6,5 +8,3 @@ https://blog.kahvia.cn/2024/03/11/css-skills.html
 https://blog.kahvia.cn/2024/03/09/vue3Knowledge.html
 https://blog.kahvia.cn/2024/03/06/MemFireDb.html
 https://blog.kahvia.cn/2024/02/29/TypeScript.html
-https://blog.kahvia.cn/2024/02/29/Uniapp.html
-https://blog.kahvia.cn/2024/02/04/NpmMirrorManage.html
