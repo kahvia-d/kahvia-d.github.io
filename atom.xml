@@ -6,7 +6,7 @@
   <link href="https://blog.kahvia.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.kahvia.cn/"/>
-  <updated>2024-06-21T11:09:40.905Z</updated>
+  <updated>2024-06-21T17:14:24.315Z</updated>
   <id>https://blog.kahvia.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.kahvia.cn/2024/06/21/LaTeX.html"/>
     <id>https://blog.kahvia.cn/2024/06/21/LaTeX.html</id>
     <published>2024-06-21T10:03:10.459Z</published>
-    <updated>2024-06-21T11:09:40.905Z</updated>
+    <updated>2024-06-21T17:14:24.315Z</updated>
     
     <content type="html"><![CDATA[<h3 id="分数">分数</h3><p>frac ：fraction，分数。</p><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\frac</span>&#123;son&#125;&#123;mother&#125;</span><br></pre></td></tr></table></figure><p><span class="math display">\[\frac{son}{mother}\]</span></p><h3 id="偏导">偏导</h3><p>partial ：偏爱的。</p><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\frac</span>&#123;<span class="keyword">\partial</span> f&#125;&#123;<span class="keyword">\partial</span> x&#125;</span><br></pre></td></tr></table></figure><p><span class="math display">\[\frac{\partial f}{\partial x}\]</span></p><h3 id="向量">向量</h3><p>vec ：vector，向量。</p><p>overrightarrow：上方右箭头。</p><p>overleftarrow：上方左箭头。 <span class="math display">\[\vec x \quad \overrightarrow x \quad \overleftarrow y\]</span></p><h3 id="点乘">点乘</h3><p>cdot：circle dot，圆点。</p><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\vec</span> x <span class="keyword">\cdot</span> <span class="keyword">\vec</span> y</span><br></pre></td></tr></table></figure><p><span class="math display">\[\vec x \cdot \vec y\]</span></p>]]></content>
     
@@ -47,7 +47,7 @@
     <link href="https://blog.kahvia.cn/2024/06/21/MachineLearning.html"/>
     <id>https://blog.kahvia.cn/2024/06/21/MachineLearning.html</id>
     <published>2024-06-21T07:47:15.746Z</published>
-    <updated>2024-06-21T12:20:17.310Z</updated>
+    <updated>2024-06-21T17:14:26.601Z</updated>
     
     <content type="html"><![CDATA[<h3 id="机器学习分类">机器学习分类</h3><p>机器学习分为监督学习和非监督学习。</p><p>监督学习：输入数据得到“正确的”输出，输入与输出是映射关系。回归算法（Regression），比如用线性回归来预测房价；分类算法（Classification），比如输入肿瘤信息将其分类为良性、恶性等类别。</p><p>非监督学习：输入数据得到的输出没有“正确”的概念，常用于寻找数据中的结构。聚类算法（Clustering），将相似的数据归类在一起；异常检测（AnomalyDetection），找出不寻常的数据；降维（DimensionalityReduction），将大数据集压缩成小数据集并尽可能减少信息丢失。</p><h3 id="线性回归">线性回归</h3><p>x -&gt; f -&gt; <span class="math inline">\(\hat{y}\)</span> 。</p><ul><li>x 是输入变量（input variable），又称特征（feature）。</li><li>y 是输出变量（output variable），又称目标变量（targetvariable），是训练集（training set）中的实际真实值。</li><li>m 是训练样本数，数据集的大小。number of training examples。</li><li><span class="math inline">\(\hat{y}\)</span>是模型（model）预测值</li></ul><p><span class="math display">\[(x,y) = single \quad  training \quad example \\(x^{(i)},y^{(i)}) = i^{th} \quad training \quad example\]</span></p><p>通过训练集训练模型（model），然后给模型输入x，模型输出 <spanclass="math inline">\(\hat{y}\)</span> 作为预测值。</p><h4id="单输入线性回归linear-regression-with-one-variable">单输入线性回归（Linearregression with one variable）</h4><p><span class="math inline">\(model : f_{w,b}(x) = wx + b\)</span>​</p><p>w 代表权重（weight），b 代表基础值（base value）。</p><h5 id="代价函数">代价函数</h5><p>Cost function : Squared error cost function.</p><p><span class="math inline">\(J(w,b) = \frac{1}{2m}\sum\limits_{i=1}^{m}(\hat{y}^{(i)} - y^{(i)})^2 = \frac1{2m}\sum\limits_{i=1}^m(f_{w,b}(x^{(i)}) - y^{(i)})^2\)</span></p><p>训练集的代价越小，模型越符合预期。代价函数中的 2是为了梯度下降中求偏导时使公式更加简洁，因为 J求偏导时外函数的导数会产生乘 2 ，正好抵消。</p><h5 id="梯度下降gradient-descent-algorithm">梯度下降（Gradient descentalgorithm）</h5><p>用于最小化代价函数的一种算法。参考<ahref="https://www.bilibili.com/video/BV19f421Q7CL/?spm_id_from=333.337.search-card.all.click&amp;vd_source=c1d0ac10ebe4bb4e8cf6648904e6ed40">不至于吧，梯度下降简单得有点离谱了啊</a>。<span class="math display">\[w = w - \alpha \frac{\partial}{\partial w} J(w,b) \\b = b - \alpha \frac{\partial}{\partial b} J(w,b)\]</span> 其中，α 代表学习率，用于控制步长，防止步长过大导致 J在最小值附近反复横跳而无法收敛。因此学习率的合适取值很重要。</p><p>偏导则作为方向以及基本步长。梯度是偏导数构成的向量。</p><h4 id="多元线性回归multiple-linear-regression">多元线性回归（Multiplelinear regression）</h4><p>注：不是多元回归（Multivariate regression）。 <spanclass="math display">\[x_j = j^{th}feature \\n = number \quad of \quad features \\\vec x^{(i)} = features \quad of \quad i^{th} \quad training \quadexample \\x^{(i)}_j = value \quad of \quad feature \quad j \quad in \quad i^{th}\quad training \quad example\]</span> 现引入多个特征值x，每个x的下标不同。每个特征值都有对应的权重。<span class="math display">\[f_{\vec w,b}(\vec x) = w_1x_1 + w_2x_2 + ... + w_nx_n + b = \vec w \cdot\vec x + b \\\vec w = [w_1 \quad w_2 \quad ... \quad w_n] \\\vec x = [x_1 \quad x_2 \quad ... \quad x_n]\]</span></p>]]></content>
     
