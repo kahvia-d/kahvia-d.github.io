@@ -8,7 +8,7 @@
       <link href="/2024/06/21/LaTeX.html"/>
       <url>/2024/06/21/LaTeX.html</url>
       
-        <content type="html"><![CDATA[<h3 id="分数">分数</h3><p>frac ：fraction，分数。</p><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\frac</span>&#123;son&#125;&#123;mother&#125;</span><br></pre></td></tr></table></figure><p><span class="math display">\[\frac{son}{mother}\]</span></p><h3 id="偏导">偏导</h3><p>partial ：偏爱的。</p><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\frac</span>&#123;<span class="keyword">\partial</span> f&#125;&#123;<span class="keyword">\partial</span> x&#125;</span><br></pre></td></tr></table></figure><p><span class="math display">\[\frac{\partial f}{\partial x}\]</span></p><h3 id="向量">向量</h3><p>vec ：vector，向量。</p><p>overrightarrow：上方右箭头。</p><p>overleftarrow：上方左箭头。 <span class="math display">\[\vec x \quad \overrightarrow x \quad \overleftarrow y\]</span></p><h3 id="点乘">点乘</h3><p>cdot：circle dot，圆点。</p><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\vec</span> x <span class="keyword">\cdot</span> <span class="keyword">\vec</span> y</span><br></pre></td></tr></table></figure><p><span class="math display">\[\vec x \cdot \vec y\]</span></p>]]></content>
+        <content type="html"><![CDATA[<h3 id="butterfly主题配置katex">Butterfly主题配置KaTeX</h3><p>参考<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly安裝文檔(四) 主題配置-2 | Butterfly</a></p><h3 id="分数">分数</h3><p>frac ：fraction，分数。</p><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\frac</span>&#123;son&#125;&#123;mother&#125;</span><br></pre></td></tr></table></figure><p><span class="math display">\[\frac{son}{mother}\]</span></p><h3 id="偏导">偏导</h3><p>partial ：偏爱的。</p><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\frac</span>&#123;<span class="keyword">\partial</span> f&#125;&#123;<span class="keyword">\partial</span> x&#125;</span><br></pre></td></tr></table></figure><p><span class="math display">\[\frac{\partial f}{\partial x}\]</span></p><h3 id="向量">向量</h3><p>vec ：vector，向量。</p><p>overrightarrow：上方右箭头。</p><p>overleftarrow：上方左箭头。 <span class="math display">\[\vec x \quad \overrightarrow x \quad \overleftarrow y\]</span></p><h3 id="点乘">点乘</h3><p>cdot：circle dot，圆点。</p><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\vec</span> x <span class="keyword">\cdot</span> <span class="keyword">\vec</span> y</span><br></pre></td></tr></table></figure><p><span class="math display">\[\vec x \cdot \vec y\]</span></p>]]></content>
       
       
       <categories>
@@ -283,7 +283,7 @@
       <link href="/2024/02/04/NpmMirrorManage.html"/>
       <url>/2024/02/04/NpmMirrorManage.html</url>
       
-        <content type="html"><![CDATA[<h3 id="安装nrm">安装nrm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g nrm</span><br></pre></td></tr></table></figure><h3 id="查看镜像源">查看镜像源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm <span class="built_in">ls</span></span><br></pre></td></tr></table></figure><h3 id="选用镜像源">选用镜像源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm use xxx</span><br></pre></td></tr></table></figure><p>比如<strong>nrm use taobao</strong>。</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="安装nrm">安装nrm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g nrm</span><br></pre></td></tr></table></figure><h3 id="查看镜像源">查看镜像源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm <span class="built_in">ls</span></span><br></pre></td></tr></table></figure><h3 id="选用镜像源">选用镜像源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm use xxx</span><br></pre></td></tr></table></figure><p>比如<strong>nrm use taobao</strong>。当 npm命令卡进度的时候，请先查看当前源是否是镜像源，因为在2024年6月22日这天突然发现变回了默认源，切换为镜像源后恢复正常。</p>]]></content>
       
       
       <categories>
@@ -1883,6 +1883,28 @@
     
     
     <entry>
+      <title>分类</title>
+      <link href="/category/index.html"/>
+      <url>/category/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/flash.css"/>
+      <url>/css/flash.css</url>
+      
+        <content type="html"><![CDATA[.pace {-webkit-pointer-events: none;pointer-events: none;-webkit-user-select: none;-moz-user-select: none;user-select: none;}.pace-inactive {display: none;}.pace .pace-progress {background: #29d;position: fixed;z-index: 2000;top: 0;right: 100%;width: 100%;height: 2px;}.pace .pace-progress-inner {display: block;position: absolute;right: 0px;width: 100px;height: 100%;box-shadow: 0 0 10px #29d, 0 0 5px #29d;opacity: 1.0;-webkit-transform: rotate(3deg) translate(0px, -4px);-moz-transform: rotate(3deg) translate(0px, -4px);-ms-transform: rotate(3deg) translate(0px, -4px);-o-transform: rotate(3deg) translate(0px, -4px);transform: rotate(3deg) translate(0px, -4px);}.pace .pace-activity {display: block;position: fixed;z-index: 2000;top: 15px;right: 15px;width: 14px;height: 14px;border: solid 2px transparent;border-top-color: #29d;border-left-color: #29d;border-radius: 10px;-webkit-animation: pace-spinner 400ms linear infinite;-moz-animation: pace-spinner 400ms linear infinite;-ms-animation: pace-spinner 400ms linear infinite;-o-animation: pace-spinner 400ms linear infinite;animation: pace-spinner 400ms linear infinite;}@-webkit-keyframes pace-spinner {0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}@-moz-keyframes pace-spinner {0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }}@-o-keyframes pace-spinner {0% { -o-transform: rotate(0deg); transform: rotate(0deg); }100% { -o-transform: rotate(360deg); transform: rotate(360deg); }}@-ms-keyframes pace-spinner {0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }}@keyframes pace-spinner {0% { transform: rotate(0deg); transform: rotate(0deg); }100% { transform: rotate(360deg); transform: rotate(360deg); }}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -1905,20 +1927,9 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/flash.css"/>
-      <url>/css/flash.css</url>
-      
-        <content type="html"><![CDATA[.pace {-webkit-pointer-events: none;pointer-events: none;-webkit-user-select: none;-moz-user-select: none;user-select: none;}.pace-inactive {display: none;}.pace .pace-progress {background: #29d;position: fixed;z-index: 2000;top: 0;right: 100%;width: 100%;height: 2px;}.pace .pace-progress-inner {display: block;position: absolute;right: 0px;width: 100px;height: 100%;box-shadow: 0 0 10px #29d, 0 0 5px #29d;opacity: 1.0;-webkit-transform: rotate(3deg) translate(0px, -4px);-moz-transform: rotate(3deg) translate(0px, -4px);-ms-transform: rotate(3deg) translate(0px, -4px);-o-transform: rotate(3deg) translate(0px, -4px);transform: rotate(3deg) translate(0px, -4px);}.pace .pace-activity {display: block;position: fixed;z-index: 2000;top: 15px;right: 15px;width: 14px;height: 14px;border: solid 2px transparent;border-top-color: #29d;border-left-color: #29d;border-radius: 10px;-webkit-animation: pace-spinner 400ms linear infinite;-moz-animation: pace-spinner 400ms linear infinite;-ms-animation: pace-spinner 400ms linear infinite;-o-animation: pace-spinner 400ms linear infinite;animation: pace-spinner 400ms linear infinite;}@-webkit-keyframes pace-spinner {0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }}@-moz-keyframes pace-spinner {0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }}@-o-keyframes pace-spinner {0% { -o-transform: rotate(0deg); transform: rotate(0deg); }100% { -o-transform: rotate(360deg); transform: rotate(360deg); }}@-ms-keyframes pace-spinner {0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }}@keyframes pace-spinner {0% { transform: rotate(0deg); transform: rotate(0deg); }100% { transform: rotate(360deg); transform: rotate(360deg); }}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>分类</title>
-      <link href="/category/index.html"/>
-      <url>/category/index.html</url>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1960,31 +1971,20 @@
     
     
     <entry>
-      <title>标签</title>
-      <link href="/tag/index.html"/>
-      <url>/tag/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>标签</title>
+      <link href="/tag/index.html"/>
+      <url>/tag/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
