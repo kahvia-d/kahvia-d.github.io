@@ -1905,6 +1905,17 @@
     
     
     <entry>
+      <title>分类</title>
+      <link href="/category/index.html"/>
+      <url>/category/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/css/custom.css"/>
       <url>/css/custom.css</url>
@@ -1916,11 +1927,11 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/category/index.html"/>
-      <url>/category/index.html</url>
+      <title>友情链接</title>
+      <link href="/friend/index.html"/>
+      <url>/friend/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<blockquote><p>欢迎交换友链</p></blockquote>]]></content>
       
     </entry>
     
@@ -1949,20 +1960,9 @@
     
     
     <entry>
-      <title>友情链接</title>
-      <link href="/friend/index.html"/>
-      <url>/friend/index.html</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>欢迎交换友链</p></blockquote>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>标签</title>
-      <link href="/tag/index.html"/>
-      <url>/tag/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1982,9 +1982,9 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>标签</title>
+      <link href="/tag/index.html"/>
+      <url>/tag/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       

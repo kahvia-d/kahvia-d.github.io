@@ -774,14 +774,14 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/Anaconda/</loc>
+    <loc>https://blog.kahvia.cn/tags/Android/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/Android/</loc>
+    <loc>https://blog.kahvia.cn/tags/Anaconda/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -809,6 +809,13 @@
   </url>
   
   <url>
+    <loc>https://blog.kahvia.cn/tags/xxx/</loc>
+    <lastmod>2024-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.kahvia.cn/tags/Flutter/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -823,7 +830,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/xxx/</loc>
+    <loc>https://blog.kahvia.cn/tags/Html-Css-JavaScript/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -837,7 +844,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/Html-Css-JavaScript/</loc>
+    <loc>https://blog.kahvia.cn/tags/js/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -851,14 +858,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/js/</loc>
-    <lastmod>2024-06-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.kahvia.cn/tags/MachineLeaning/</loc>
+    <loc>https://blog.kahvia.cn/tags/PostgreSQL/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -872,7 +872,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/PostgreSQL/</loc>
+    <loc>https://blog.kahvia.cn/tags/MachineLeaning/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -900,7 +900,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/hexo/</loc>
+    <loc>https://blog.kahvia.cn/tags/ssh-centos7-xshell/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -914,7 +914,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/ssh-centos7-xshell/</loc>
+    <loc>https://blog.kahvia.cn/tags/hexo/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -922,13 +922,6 @@
   
   <url>
     <loc>https://blog.kahvia.cn/tags/html-element/</loc>
-    <lastmod>2024-06-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.kahvia.cn/tags/uniapp/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -956,7 +949,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kahvia.cn/tags/Dart/</loc>
+    <loc>https://blog.kahvia.cn/tags/uniapp/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -977,6 +970,13 @@
   </url>
   
   <url>
+    <loc>https://blog.kahvia.cn/tags/Dart/</loc>
+    <lastmod>2024-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.kahvia.cn/tags/gitalk/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -991,6 +991,13 @@
   </url>
   
   <url>
+    <loc>https://blog.kahvia.cn/tags/echarts-vue3/</loc>
+    <lastmod>2024-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.kahvia.cn/tags/test/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -999,13 +1006,6 @@
   
   <url>
     <loc>https://blog.kahvia.cn/tags/vue/</loc>
-    <lastmod>2024-06-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.kahvia.cn/tags/echarts-vue3/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
