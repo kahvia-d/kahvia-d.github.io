@@ -59,7 +59,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2024-07-17 19:25:43',
+  postUpdate: '2024-07-18 00:08:17',
   postMainColor: '',
 }</script><noscript><style type="text/css">
   #nav {
@@ -277,15 +277,15 @@ if (true) {
       </a>
     </div>
     
-    <div class="catalog-list-item" id="/categories/经验/">
-      <a href="/categories/经验/">
-        经验
-      </a>
-    </div>
-    
     <div class="catalog-list-item" id="/categories/工具使用/">
       <a href="/categories/工具使用/">
         工具使用
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/经验/">
+      <a href="/categories/经验/">
+        经验
       </a>
     </div>
     
@@ -294,29 +294,29 @@ if (true) {
         测试
       </a>
     </div>
-    </div><div class="category-bar-next" id="category-bar-next" onclick="anzhiyu.scrollCategoryBarToRight()"><i class="anzhiyufont anzhiyu-icon-angle-double-right"></i></div><a class="catalog-more" href="/categories/">更多</a></div></div></div><div class="recent-post-item lastestpost-item" onclick="pjax.loadUrl('/2022/10/07/SpringbootWithoutWebapp.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">小问题</div><a class="unvisited-post" href="/2022/10/07/SpringbootWithoutWebapp.html" title="Springboot项目打 jar 包没有webapp中的静态资源">未读</a></div><a class="article-title" href="/2022/10/07/SpringbootWithoutWebapp.html" title="Springboot项目打 jar 包没有webapp中的静态资源">Springboot项目打 jar 包没有webapp中的静态资源</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-07T03:21:50.351Z" title="发表于 2022-10-07 11:21:50" time="2022-10-07 11:21:50">2022-10-07</time><time class="time_hidden" datetime="2022-10-24T04:13:33.074Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Springboot/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Springboot</span></a></span></div><div class="content">问题发生场景
+    </div><div class="category-bar-next" id="category-bar-next" onclick="anzhiyu.scrollCategoryBarToRight()"><i class="anzhiyufont anzhiyu-icon-angle-double-right"></i></div><a class="catalog-more" href="/categories/">更多</a></div></div></div><div class="recent-post-item lastestpost-item" onclick="pjax.loadUrl('/2022/10/07/SpringbootWithoutWebapp.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">小问题</div><a class="unvisited-post" href="/2022/10/07/SpringbootWithoutWebapp.html" title="Springboot项目打 jar 包没有webapp中的静态资源">未读</a></div><a class="article-title" href="/2022/10/07/SpringbootWithoutWebapp.html" title="Springboot项目打 jar 包没有webapp中的静态资源">Springboot项目打 jar 包没有webapp中的静态资源</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-07T03:21:50.351Z" title="发表于 2022-10-07 11:21:50" time="2022-10-07 11:21:50">2022-10-07</time><time class="time_hidden" datetime="2022-10-24T04:13:33.074Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Springboot/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Springboot</span></a></span></div><div class="content"> 问题发生场景
 以下场景都建立在 maven 打 jar 包的基础上。
 昨日我如往常一样，在springboot项目中新建 webapp 文件夹，然后在里面放俩空文件夹，作为项目里文件上传中转的地方。然后发现打包后程序运行时并不能找到webapp文件夹中的静态资源。查看编译后产生的 target 目录发现，webapp并没有被编译。如下图所示。
 
 而平时开发，直接通过 idea 运行的时候，却会编译 webapp 下的资源文件到 classes 目录下。如下图所示。
 
 
-解决方案
+ 解决方案
 如果跟我一样不愿意放弃 webapp 的使用，那么想要解决这个问题，就需要手动指定项目构建时的资源路径。
 在 pom.xml 文件的 build 标签中，添加以下代码，手动指定资源路径。
-123456789&lt;resources&gt;    &lt;resource&gt;        &lt;directory&gt;src/main/webapp&lt;/directory&gt;        &lt;targetPath&gt;META-INF/resources&lt;/targetPath& ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/10/05/MicroserviceEureka.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/10/05/MicroserviceEureka.html" title="MicroService-Eureka">未读</a></div><a class="article-title" href="/2022/10/05/MicroserviceEureka.html" title="MicroService-Eureka">MicroService-Eureka</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-05T06:36:11.655Z" title="发表于 2022-10-05 14:36:11" time="2022-10-05 14:36:11">2022-10-05</time><time class="time_hidden" datetime="2022-10-24T04:13:33.066Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/MicroService/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>MicroService</span></a></span></div><div class="content">Eureka
+123456789&lt;resources&gt;    &lt;resource&gt;        &lt;directory&gt;src/main/webapp&lt;/directory&gt;        &lt;targetPath&gt;META-INF/resources&lt;/targetPat ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/10/05/MicroserviceEureka.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/10/05/MicroserviceEureka.html" title="MicroService-Eureka">未读</a></div><a class="article-title" href="/2022/10/05/MicroserviceEureka.html" title="MicroService-Eureka">MicroService-Eureka</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-05T06:36:11.655Z" title="发表于 2022-10-05 14:36:11" time="2022-10-05 14:36:11">2022-10-05</time><time class="time_hidden" datetime="2022-10-24T04:13:33.066Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/MicroService/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>MicroService</span></a></span></div><div class="content"> Eureka
 微服务的注册中心。
-服务端
+ 服务端
 1.添加依赖
 1234&lt;dependency&gt;    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;    &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-server&lt;/artifactId&gt;&lt;/dependency&gt;
 2.应用启动入口标注@EnableEurekaServer
 123456789@EnableEurekaServer@SpringBootApplicationpublic class EurekaServerDemoApplication &#123;    public static void main(String[] args) &#123;        SpringApplication.run(EurekaServerDemoApplication.class, args);    &#125;&#125;
-3.在 application.yml 中配置 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/10/01/FlutterTextFormField.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/10/01/FlutterTextFormField.html" title="Flutter-TextFormField">未读</a></div><a class="article-title" href="/2022/10/01/FlutterTextFormField.html" title="Flutter-TextFormField">Flutter-TextFormField</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-01T03:01:39.421Z" title="发表于 2022-10-01 11:01:39" time="2022-10-01 11:01:39">2022-10-01</time><time class="time_hidden" datetime="2022-10-24T04:13:33.053Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content">TextFormField
+3.在 application.yml 中 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/10/01/FlutterTextFormField.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/10/01/FlutterTextFormField.html" title="Flutter-TextFormField">未读</a></div><a class="article-title" href="/2022/10/01/FlutterTextFormField.html" title="Flutter-TextFormField">Flutter-TextFormField</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-01T03:01:39.421Z" title="发表于 2022-10-01 11:01:39" time="2022-10-01 11:01:39">2022-10-01</time><time class="time_hidden" datetime="2022-10-24T04:13:33.053Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content"> TextFormField
 
 decoration：使用 InputDecoration 来创建文本框
 controller：指定 TextEditingController 对象，可以通过这个对象来获取文本框的值
 
-InputDecoration
+ InputDecoration
 
 focusedBorder：文本框聚焦的时候的边框样式
 disabledBorder：禁止输入时
@@ -327,13 +327,13 @@ hintText：输入框的提示字段，类似于 html 中的 placeholder
 
 ps：想要输入框的内容正常的垂直居中，就需要边框，不想要样式的话，可以设置边框为透明色，宽度为0。除此之外，还需要设置 contentPadding 为0才能保证绝对垂直居中。
 代码区
-12345678910111213TextFormField(  decoration ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/09/29/FlutterGoodsStoreDemo.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">实践</div><a class="unvisited-post" href="/2022/09/29/FlutterGoodsStoreDemo.html" title="Flutter-购物小测试">未读</a></div><a class="article-title" href="/2022/09/29/FlutterGoodsStoreDemo.html" title="Flutter-购物小测试">Flutter-购物小测试</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-29T11:29:15.301Z" title="发表于 2022-09-29 19:29:15" time="2022-09-29 19:29:15">2022-09-29</time><time class="time_hidden" datetime="2022-10-24T04:13:33.029Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content">在学习 Provider 的时候，我在 flutter 的官方小教程中，看到了一个 demo，有关购买商品，加入购物车的。刚学习 Provider 的时候，很多地方不明白，所以那个案例也没有能够理解。
+12345678910111213TextFormField(  decorati ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/09/29/FlutterGoodsStoreDemo.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">实践</div><a class="unvisited-post" href="/2022/09/29/FlutterGoodsStoreDemo.html" title="Flutter-购物小测试">未读</a></div><a class="article-title" href="/2022/09/29/FlutterGoodsStoreDemo.html" title="Flutter-购物小测试">Flutter-购物小测试</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-29T11:29:15.301Z" title="发表于 2022-09-29 19:29:15" time="2022-09-29 19:29:15">2022-09-29</time><time class="time_hidden" datetime="2022-10-24T04:13:33.029Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content">在学习 Provider 的时候，我在 flutter 的官方小教程中，看到了一个 demo，有关购买商品，加入购物车的。刚学习 Provider 的时候，很多地方不明白，所以那个案例也没有能够理解。
 今天的我已经能使用 Navigator 和 Provider 的知识了。利用我已有的知识，可以大概模仿出官方 demo 的样子了。
-路由分析
+ 路由分析
 这个 demo 涉及到三个页面，第一个是登录界面，第二个是商品界面，第三个是购物车界面。
 分别命名为：Login, Catalog, Cart
-123456789import &#x27;package:dayly/Login.dart&#x27;;import &#x27;package:dayly/Catalog.dart&#x27;;import &#x27;package:dayly/Cart.dart&#x27;;var routes=&#123;  &#x27;login&#x27;:(context) =&gt; const Login(),  &quot;catalog&quot;:(context) =&gt; const Cat ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/09/29/FlutterBottomNavigatorBar.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/09/29/FlutterBottomNavigatorBar.html" title="Flutter-BottomNavigatorBar">未读</a></div><a class="article-title" href="/2022/09/29/FlutterBottomNavigatorBar.html" title="Flutter-BottomNavigatorBar">Flutter-BottomNavigatorBar</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-29T04:51:39.100Z" title="发表于 2022-09-29 12:51:39" time="2022-09-29 12:51:39">2022-09-29</time><time class="time_hidden" datetime="2022-10-24T04:13:33.003Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content">ottomNavigatorBar 是 Scaffold 组件中的，底部的导航栏。
-BottomNavigatorBar
+123456789import &#x27;package:dayly/Login.dart&#x27;;import &#x27;package:dayly/Catalog.dart&#x27;;import &#x27;package:dayly/Cart.dart&#x27;;var routes=&#123;  &#x27;login&#x27;:(context) =&gt; const Login(),  &quot;catalog&quot;:(context) =&gt; const Ca ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/09/29/FlutterBottomNavigatorBar.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/09/29/FlutterBottomNavigatorBar.html" title="Flutter-BottomNavigatorBar">未读</a></div><a class="article-title" href="/2022/09/29/FlutterBottomNavigatorBar.html" title="Flutter-BottomNavigatorBar">Flutter-BottomNavigatorBar</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-29T04:51:39.100Z" title="发表于 2022-09-29 12:51:39" time="2022-09-29 12:51:39">2022-09-29</time><time class="time_hidden" datetime="2022-10-24T04:13:33.003Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content">ottomNavigatorBar 是 Scaffold 组件中的，底部的导航栏。
+ BottomNavigatorBar
 
 items：BottomNavigatorBarItem（）
 
@@ -349,14 +349,14 @@ fixedColor：选中的 item 字体颜色和图标颜色
 onTap：点击选项时触发的函数，需要传入 index （点击选项的索引），（index）{xxx}，用于更新当前索引
 
 </div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/09/28/Navigator.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/09/28/Navigator.html" title="Flutter-Navigator">未读</a></div><a class="article-title" href="/2022/09/28/Navigator.html" title="Flutter-Navigator">Flutter-Navigator</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-28T06:02:17.390Z" title="发表于 2022-09-28 14:02:17" time="2022-09-28 14:02:17">2022-09-28</time><time class="time_hidden" datetime="2022-10-24T04:13:33.071Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content">Navigator用于管理路由。
-三种路由（省略动态路由）
+ 三种路由（省略动态路由）
 
 
 匿名路由
 
 
 Navigator.push(context, MaterialPageRoute(build:(context)=&gt;diyWidget()))
-12345* 命名路由  * ``` dart    Navigator.pushNamed(context, name)
+&lt;!--code￼0--&gt;
 
 
 
@@ -365,22 +365,22 @@ name 指创建的路由表中的 key，如下所示
 
 
 var routes=&#123;
-  'home':(context)=&gt; const IndexPage(),
-  'OfficialDemo':(context)=&gt;const OfficialDemo(),
-  'Container':(context)=&gt;const ContainerDemo(),
-  'ColumnRow':(context)=&gt;const ColumnAndRow(),
-  'Flex':(context)=&gt;const FlexPage(),
-  'Wrap':(context)=&gt;const WrapPage ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/09/26/InheritedWidget.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/09/26/InheritedWidget.html" title="Flutter-InheritedWidget">未读</a></div><a class="article-title" href="/2022/09/26/InheritedWidget.html" title="Flutter-InheritedWidget">Flutter-InheritedWidget</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-26T13:58:19.394Z" title="发表于 2022-09-26 21:58:19" time="2022-09-26 21:58:19">2022-09-26</time><time class="time_hidden" datetime="2022-10-24T04:13:33.063Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content">InheritedWidget
+  &#x27;home&#x27;:(context)=&gt; const IndexPage(),
+  &#x27;OfficialDemo&#x27;:(context)=&gt;const OfficialDemo(),
+  &#x27;Container&#x27;:(context)=&gt;const ContainerDemo(),
+  &#x27;ColumnRow&#x27;:(context)=&gt;const ColumnAndRow(),
+  &#x27;Flex&#x27;:(context)=&gt;const FlexPage(),
+  &#x27;Wrap&#x27;:(context) ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/09/26/InheritedWidget.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/09/26/InheritedWidget.html" title="Flutter-InheritedWidget">未读</a></div><a class="article-title" href="/2022/09/26/InheritedWidget.html" title="Flutter-InheritedWidget">Flutter-InheritedWidget</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-26T13:58:19.394Z" title="发表于 2022-09-26 21:58:19" time="2022-09-26 21:58:19">2022-09-26</time><time class="time_hidden" datetime="2022-10-24T04:13:33.063Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content"> InheritedWidget
 
 flutter中用于数据共享的组件。
 创建自定义类，继承 InheritedWidget ，用这个自定义类的组件实例包裹子组件，使得子组件及其后代都可以访问自定义类实例中的共享数据。
 
-自定义类
+ 自定义类
 使用 inh 简写快速生成自定义类并继承数据共享组件。
-12345678910111213141516171819class WaitingData extends InheritedWidget &#123;  final String name; //自定义共享数据，需要final前缀  const WaitingData(&#123;    Key? key,    required Widget child,    required this.name  &#125;) : super(key: key, child: child);  static WaitingData of(BuildContext context) &#123;//静态方法，简化了获取共享数据的方式。不用这种就用下面这行复杂方式    final WaitingData? re ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/09/26/FlutterProvider.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/09/26/FlutterProvider.html" title="Flutter-Provider">未读</a></div><a class="article-title" href="/2022/09/26/FlutterProvider.html" title="Flutter-Provider">Flutter-Provider</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-26T13:57:14.479Z" title="发表于 2022-09-26 21:57:14" time="2022-09-26 21:57:14">2022-09-26</time><time class="time_hidden" datetime="2022-10-24T04:13:33.041Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content">Provider是第三方状态管理的库。就我目前的水平来看，它貌似能代替 StatefulWidget 和 InheritedWidget 。
-安装（带^表示可以自动更新）
+12345678910111213141516171819class WaitingData extends InheritedWidget &#123;  final String name; //自定义共享数据，需要final前缀  const WaitingData(&#123;    Key? key,    required Widget child,    required this.name  &#125;) : super(key: key, child: child);  static WaitingData of(BuildContext context) &#123;//静态方法，简化了获取共享数据的方式。不用这种就用下面这行复杂方式    final WaitingData?  ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/09/26/FlutterProvider.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/09/26/FlutterProvider.html" title="Flutter-Provider">未读</a></div><a class="article-title" href="/2022/09/26/FlutterProvider.html" title="Flutter-Provider">Flutter-Provider</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-26T13:57:14.479Z" title="发表于 2022-09-26 21:57:14" time="2022-09-26 21:57:14">2022-09-26</time><time class="time_hidden" datetime="2022-10-24T04:13:33.041Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content">Provider是第三方状态管理的库。就我目前的水平来看，它貌似能代替 StatefulWidget 和 InheritedWidget 。
+ 安装（带^表示可以自动更新）
 12dependencies:  provider: ^6.0.3
-使用
+ 使用
 
 
 创建数据模型（自定义类），继承 ChangeNotifier ，暴露想要共享的数据, 以及创建可选的修改数据的方法。
@@ -402,7 +402,7 @@ child 子组件，也就是包裹的子孙组件
 作为 Listener 使用共享数据。因为时常需要响应数据的变化，所以叫监听者。
 
 
-context.wat ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/09/24/DataTable.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/09/24/DataTable.html" title="Flutter-DataTable">未读</a></div><a class="article-title" href="/2022/09/24/DataTable.html" title="Flutter-DataTable">Flutter-DataTable</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-24T07:21:42.784Z" title="发表于 2022-09-24 15:21:42" time="2022-09-24 15:21:42">2022-09-24</time><time class="time_hidden" datetime="2022-10-24T04:13:32.984Z" title="更新于 2022-10-24 12:13:32" time="2022-10-24 12:13:32">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content">DataTable
+context.w ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/09/24/DataTable.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/09/24/DataTable.html" title="Flutter-DataTable">未读</a></div><a class="article-title" href="/2022/09/24/DataTable.html" title="Flutter-DataTable">Flutter-DataTable</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-24T07:21:42.784Z" title="发表于 2022-09-24 15:21:42" time="2022-09-24 15:21:42">2022-09-24</time><time class="time_hidden" datetime="2022-10-24T04:13:32.984Z" title="更新于 2022-10-24 12:13:32" time="2022-10-24 12:13:32">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content"> DataTable
 
 sortColumnIndex：排序的列号
 sortAscending：排序方式，true为升序，false为降序，决定了排序箭头的上下，也决定了排序事件的传入值
@@ -412,7 +412,7 @@ rows：各行数据，通常是动态生成的
 
 
 代码区
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273class Student&#123;  String name;  int age;  String school;  bool selected;  //学生类和它的构造函数  Student(this.name,this.age,this.school,&#123;this.selected=false&#125;);&#125;class MyPage extends StatefulWidge ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/09/18/ThirdPackage.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/09/18/ThirdPackage.html" title="Flutter-ThirdPackage">未读</a></div><a class="article-title" href="/2022/09/18/ThirdPackage.html" title="Flutter-ThirdPackage">Flutter-ThirdPackage</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-18T05:43:42.646Z" title="发表于 2022-09-18 13:43:42" time="2022-09-18 13:43:42">2022-09-18</time><time class="time_hidden" datetime="2022-10-24T04:13:33.082Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content">在开发中经常要用到第三方库，而 Flutter 开发经常用的第三方库可以在pub.dev中寻找。
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273class Student&#123;  String name;  int age;  String school;  bool selected;  //学生类和它的构造函数  Student(this.name,this.age,this.school,&#123;this.selected=false&#125;);&#125;class MyPage extends StatefulWidg ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2022/09/18/ThirdPackage.html')"><div class="recent-post-info no-cover"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">知识</div><a class="unvisited-post" href="/2022/09/18/ThirdPackage.html" title="Flutter-ThirdPackage">未读</a></div><a class="article-title" href="/2022/09/18/ThirdPackage.html" title="Flutter-ThirdPackage">Flutter-ThirdPackage</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-18T05:43:42.646Z" title="发表于 2022-09-18 13:43:42" time="2022-09-18 13:43:42">2022-09-18</time><time class="time_hidden" datetime="2022-10-24T04:13:33.082Z" title="更新于 2022-10-24 12:13:33" time="2022-10-24 12:13:33">2022-10-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Flutter/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Flutter</span></a></span></div><div class="content">在开发中经常要用到第三方库，而 Flutter 开发经常用的第三方库可以在pub.dev中寻找。
 使用方法：
 
 
