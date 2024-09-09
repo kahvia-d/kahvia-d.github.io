@@ -1,3 +1,4 @@
+https://blog.kahvia.cn/2024/08/28/LinuxOperations.html
 https://blog.kahvia.cn/2024/07/16/PythonGrammar.html
 https://blog.kahvia.cn/2024/06/21/LaTeX.html
 https://blog.kahvia.cn/2024/06/21/MachineLearning.html
@@ -7,4 +8,3 @@ https://blog.kahvia.cn/2024/04/19/DaisyUI.html
 https://blog.kahvia.cn/2024/03/16/Vue-use.html
 https://blog.kahvia.cn/2024/03/11/css-skills.html
 https://blog.kahvia.cn/2024/03/09/vue3Knowledge.html
-https://blog.kahvia.cn/2024/03/06/MemFireDb.html

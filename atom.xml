@@ -6,7 +6,7 @@
   <link href="https://blog.kahvia.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.kahvia.cn/"/>
-  <updated>2024-07-16T05:16:26.059Z</updated>
+  <updated>2024-08-28T14:59:15.065Z</updated>
   <id>https://blog.kahvia.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux小知识</title>
+    <link href="https://blog.kahvia.cn/2024/08/28/LinuxOperations.html"/>
+    <id>https://blog.kahvia.cn/2024/08/28/LinuxOperations.html</id>
+    <published>2024-08-28T07:12:03.408Z</published>
+    <updated>2024-08-28T14:59:15.065Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="添加用户"><a class="markdownIt-Anchor" href="#添加用户"></a> 添加用户</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser xxx</span><br></pre></td></tr></table></figure><h3 id="为用户赋予去除sudo权限"><a class="markdownIt-Anchor" href="#为用户赋予去除sudo权限"></a> 为用户赋予/去除sudo权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -a -G sudo username</span><br></pre></td></tr></table></figure><p><code>sudo usermod -a -G sudo username</code> 这是一个Linux命令，用于管理用户组权限。它表示将用户（username）添加到sudo用户组。</p><ul><li><code>usermod</code>: 用户管理工具</li><li><code>-a</code>: 表示追加（append），即如果该用户已经存在于其他组，不会将其移除</li><li><code>-G</code>: 指定用户应加入的组名，这里是<code>sudo</code></li><li><code>username</code>: 需要修改权限的用户名</li></ul><p>执行这个命令后，指定的用户会获得sudo权限，允许他们使用sudo命令来执行需要管理员权限的操作。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -G usergroup username</span><br></pre></td></tr></table></figure><p>将用户转移到 usergroup 用户组中，即移出 sudo 用户群。</p><h3 id="安装zsh"><a class="markdownIt-Anchor" href="#安装zsh"></a> 安装Zsh</h3><p><a href="https://www.zsh.org/">Zsh</a>是 bash 的平替，有着如诸如输入目录名称自动 cd ，以及目录名自动更正等功能。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install zsh</span><br></pre></td></tr></table></figure><h3 id="安装homebrew"><a class="markdownIt-Anchor" href="#安装homebrew"></a> 安装HomeBrew</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#官方</span></span><br><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br><span class="line"><span class="comment">#非官方</span></span><br><span class="line">/bin/zsh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure><h3 id="安装nodejs"><a class="markdownIt-Anchor" href="#安装nodejs"></a> 安装Nodejs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node@20</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;添加用户&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#添加用户&quot;&gt;&lt;/a&gt; 添加用户&lt;/h3&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;sp</summary>
+      
+    
+    
+    
+    <category term="知识" scheme="https://blog.kahvia.cn/categories/%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="Linux" scheme="https://blog.kahvia.cn/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Python常用语法</title>
@@ -503,31 +528,6 @@
     
     
     <category term="node.js" scheme="https://blog.kahvia.cn/tags/node-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript-解构赋值</title>
-    <link href="https://blog.kahvia.cn/2023/06/28/Javascript-DestructuringAssignment.html"/>
-    <id>https://blog.kahvia.cn/2023/06/28/Javascript-DestructuringAssignment.html</id>
-    <published>2023-06-28T06:22:20.924Z</published>
-    <updated>2023-06-28T06:31:13.271Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="解构赋值"><a class="markdownIt-Anchor" href="#解构赋值"></a> 解构赋值</h3><p><strong>解构赋值</strong>语法是一种 Javascript 表达式。可以将数组中的值或对象的属性取出，赋值给其他变量。</p><p>对于对象和数组的解构，有两种解构模式：<em>绑定模式</em>和<em>赋值模式</em>，它们的语法略有不同。</p><h3 id="绑定模式"><a class="markdownIt-Anchor" href="#绑定模式"></a> 绑定模式</h3><p>在绑定模式中，模式以声明关键字（<code>var</code>、<code>let</code> 或 <code>const</code>）开始。然后，每个单独的属性必须绑定到一个变量或进一步解构。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">2</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">const</span> &#123; a, <span class="attr">b</span>: &#123; <span class="attr">c</span>: d &#125; &#125; = obj;</span><br><span class="line"><span class="comment">// Two variables are bound: `a` and `d`</span></span><br><span class="line"><span class="comment">//两个变量绑定了：a 和 b</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="赋值模式"><a class="markdownIt-Anchor" href="#赋值模式"></a> 赋值模式</h3><p>在赋值模式中，模式不以关键字开头。每个解构属性都被赋值给一个赋值目标——这个赋值目标可以事先用 <code>var</code> 或 <code>let</code> 声明，也可以是另一个对象的属性——一般来说，可以是任何可以出现在赋值表达式左侧的东西。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [];</span><br><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> &#125;;</span><br><span class="line">(&#123; <span class="attr">a</span>: numbers[<span class="number">0</span>], <span class="attr">b</span>: numbers[<span class="number">1</span>] &#125; = obj);</span><br><span class="line"><span class="comment">// The properties `a` and `b` are assigned to properties of `numbers`</span></span><br><span class="line"><span class="comment">//obj的两个属性，a和b，被赋值给了数组numbers[]</span></span><br></pre></td></tr></table></figure><blockquote><p><strong>备注：</strong> 当使用对象文字解构赋值而不带声明时，在赋值语句周围必须添加括号 <code>( ... )</code>。</p><p><code>&#123; a, b &#125; = &#123; a: 1, b: 2 &#125;</code> 不是有效的独立语法，因为左侧的 <code>&#123;a, b&#125;</code> 被视为块而不是对象字面量。但是，<code>(&#123; a, b &#125; = &#123; a: 1, b: 2 &#125;)</code> 是有效的，<code>const &#123; a, b &#125; = &#123; a: 1， b: 2 &#125;</code> 也是有效的。</p><p>如果你的编码风格不包括尾随分号，则 <code>( ... )</code> 表达式前面需要有一个分号，否则它可能用于执行前一行的函数。</p></blockquote><h3 id="参考来源"><a class="markdownIt-Anchor" href="#参考来源"></a> 参考来源</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">解构赋值 - JavaScript | MDN</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;解构赋值&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#解构赋值&quot;&gt;&lt;/a&gt; 解构赋值&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;解构赋值&lt;/strong&gt;语法是一种 Javascript 表达式。可以将数组中的值或对象的属性取出，赋值给其他变量</summary>
-      
-    
-    
-    
-    <category term="知识" scheme="https://blog.kahvia.cn/categories/%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="js" scheme="https://blog.kahvia.cn/tags/js/"/>
     
   </entry>
   
